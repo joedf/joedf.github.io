@@ -1,0 +1,752 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<style>
+</style><title>LibCon_docs</title>
+<link rel="stylesheet" type="text/css" href="src/markdown.css">
+<link rel="stylesheet" type="text/css" href="src/style.css">
+</head><body>
+<a href="https://github.com/joedf/LibCon.ahk"><img style="position: absolute; top: 0; right: 0; border: 0;" src="src/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+<h1>
+<a name="libcon--documentation" class="anchor" href="#libcon--documentation"><span class="octicon octicon-link"></span></a>LibCon : Documentation</h1>
+
+<h1>
+<a name="table-of-contents" class="anchor" href="#table-of-contents"><span class="octicon octicon-link"></span></a>Table of Contents</h1>
+
+<ul>
+<li>
+<a href="#global-vars">Library Global Variables</a>
+
+<ul>
+<li><a href="#defaults">Defaults</a></li>
+<li><a href="#predefined-variables">Predefined Variables</a></li>
+<li><a href="#console-color-constants">Console Color Constants</a></li>
+</ul>
+</li>
+<li>
+<a href="#library-functions">Library Functions</a>
+
+<ul>
+<li><a href="#startconsole">StartConsole()</a></li>
+<li><a href="#attachconsole-cpid-">AttachConsole( cPID )</a></li>
+<li><a href="#freeconsole">FreeConsole()</a></li>
+<li><a href="#setcolor-fg-bg-">setColor( FG="", BG="" )</a></li>
+<li><a href="#setfgcolor-c-">setFgColor( c )</a></li>
+<li><a href="#setbgcolor-c-">setBgColor( c )</a></li>
+<li><a href="#getcolor">getColor()</a></li>
+<li><a href="#getfgcolor">getFgColor()</a></li>
+<li><a href="#getbgcolor">getBgColor()</a></li>
+<li><a href="#printcolortable">printcolortable()</a></li>
+<li><a href="#newline-x1-">newline( x=1 )</a></li>
+<li><a href="#puts-string-">puts( string="" )</a></li>
+<li><a href="#print-string-">print( string="" )</a></li>
+<li><a href="#printf-msg-vargs-">printf( msg, vargs* )</a></li>
+<li><a href="#putsf-msg-vargs-">putsf( msg, vargs* )</a></li>
+<li><a href="#printw-str-">printW( str )</a></li>
+<li><a href="#printwf-msg-vargs-">printWf( msg, vargs* )</a></li>
+<li><a href="#putsw-str-">putsW( str )</a></li>
+<li><a href="#putswf-msg-vargs-">putsWf( msg, vargs* )</a></li>
+<li><a href="#clearscreen">ClearScreen()</a></li>
+<li><a href="#gets-byref-var-">gets( ByRef var="" )</a></li>
+<li><a href="#getch-byref-keyname-">getch( ByRef keyname )</a></li>
+<li><a href="#wait-timeout0-">wait( timeout=0 )</a></li>
+<li><a href="#waitaction">WaitAction()</a></li>
+<li><a href="#pause-show1-">pause( show=1 )</a></li>
+<li><a href="#dec2hex-var-">dec2hex( var )</a></li>
+<li><a href="#tobase-n-b-">ToBase( n, b )</a></li>
+<li><a href="#sprogressbar-length-current-max-unlock--0-fixed1-lp-lba-lbb-">sProgressBar( Length, Current, Max, Unlock = 0, fixed=1, lp="|", lba="[", lbb="]" )</a></li>
+<li><a href="#getconsolesize-byref-bufferwidth-byref-bufferheight-">getConsoleSize( ByRef bufferwidth, ByRef bufferheight )</a></li>
+<li><a href="#getconsolewidth">getConsoleWidth()</a></li>
+<li><a href="#getconsoleheight">getConsoleHeight()</a></li>
+<li><a href="#getconsolehandle">getConsoleHandle()</a></li>
+<li><a href="#flushinput">flushInput()</a></li>
+<li><a href="#getfontsize-byref-fontwidth-byref-fontheight-">getFontSize( Byref fontwidth, ByRef fontheight )</a></li>
+<li><a href="#getfontwidth">getFontWidth()</a></li>
+<li><a href="#getfontheight">getFontHeight()</a></li>
+<li><a href="#setconsolesize-width-height-sizeheight0-">setConsoleSize( width, height, SizeHeight=0 )</a></li>
+<li><a href="#getconsolecursorposition-byref-x-byref-y-">getConsoleCursorPosition( ByRef x, ByRef y )</a></li>
+<li><a href="#setconsolecursorposition-x--y--">SetConsoleCursorPosition( x="", y="" )</a></li>
+<li><a href="#getconsoleoriginaltitle-byref-title-">GetConsoleOriginalTitle( byRef Title )</a></li>
+<li><a href="#getconsoletitle-byref-title-">GetConsoleTitle( byRef Title )</a></li>
+<li><a href="#setconsoletitle-title-">SetConsoleTitle( title="" )</a></li>
+<li><a href="#setconsoleinputcp-codepage-">SetConsoleInputCP( codepage )</a></li>
+<li><a href="#getconsoleinputcp">GetConsoleInputCP()</a></li>
+<li><a href="#setconsoleoutputcp-codepage-">SetConsoleOutputCP( codepage )</a></li>
+<li><a href="#getconsoleoutputcp">GetConsoleOutputCP()</a></li>
+<li><a href="#libconerror-fname-arg1-arg2-arg3-arg4-">LibConError( fname:="", arg1:="", arg2:="", arg3:="", arg4:="" )</a></li>
+</ul>
+</li>
+</ul><p><a></a></p>
+
+<h2>
+<a name="library-functions" class="anchor" href="#library-functions"><span class="octicon octicon-link"></span></a>Library Functions</h2>
+
+<hr><p><a></a></p>
+
+<h4>
+<a name="startconsole" class="anchor" href="#startconsole"><span class="octicon octicon-link"></span></a><strong><em>StartConsole()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Opens up a New Console Window that 'belongs' (attached) to the current
+             AutoHotkey Thread. Also, Sets the Library's Global variables:
+             Stdout (Object) and Stdin (Object)
+      Input: None  
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="attachconsole-cpid-" class="anchor" href="#attachconsole-cpid-"><span class="octicon octicon-link"></span></a><strong><em>AttachConsole( cPID )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Attach to a Console was already running. Although, it is suggested to use
+             'StartConsole()' when possible. (Since this mode is still experimental
+             and rarely used anyways)
+      Input: The target Console's PID 
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="freeconsole" class="anchor" href="#freeconsole"><span class="octicon octicon-link"></span></a><strong><em>FreeConsole()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Detach/Terminate current Console and keeps AutoHotkey running
+             till the script exits.
+      Input: None
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="setcolor-fg-bg-" class="anchor" href="#setcolor-fg-bg-"><span class="octicon octicon-link"></span></a><strong><em>setColor( FG="", BG="" )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Sets the Current Console's Foreground and Background Colors.
+             (A.K.A. Text color and Text Background color)
+      Input: FG (Foreground) - Set the Foreground color (Hexadecimal Value)
+             BG (Background) - Set the Background color (Hexadecimal Value)
+             Note: The 'Console Color Constants' may be used here.
+             Default: No change to current color
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="setfgcolor-c-" class="anchor" href="#setfgcolor-c-"><span class="octicon octicon-link"></span></a><strong><em>setFgColor( c )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Synonym for 'setColor(FG)' - see 'setColor()' for details.
+      Input: FG (Foreground) - Set the Foreground color (Hexadecimal Value)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="setbgcolor-c-" class="anchor" href="#setbgcolor-c-"><span class="octicon octicon-link"></span></a><strong><em>setBgColor( c )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Synonym for 'setColor("",BG)' - see 'setColor()' for details.
+      Input: BG (Background) - Set the Background color (Hexadecimal Value)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getcolor" class="anchor" href="#getcolor"><span class="octicon octicon-link"></span></a><strong><em>getColor()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Returns the current color (Hexadecimal Value)
+             Note: It may be suggest to simply use the 'getFgColor()'
+             and the 'getBgColor()' functions instead since they are
+             more user friendly. See 'Console Color Constants' for all
+             possible color values.
+      Input: None
+     Output: Success is Non-Zero, Failure is Undefined
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getfgcolor" class="anchor" href="#getfgcolor"><span class="octicon octicon-link"></span></a><strong><em>getFgColor()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Returns the current Foreground color (Hexadecimal Value)
+             See 'Console Color Constants' for all possible color values.
+      Input: None
+     Output: Success is Non-Zero, Failure is Undefined
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getbgcolor" class="anchor" href="#getbgcolor"><span class="octicon octicon-link"></span></a><strong><em>getBgColor()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Returns the current Background color (Hexadecimal Value)
+             See 'Console Color Constants' for all possible color values.
+      Input: None
+     Output: Success is Non-Zero, Failure is Undefined
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="printcolortable" class="anchor" href="#printcolortable"><span class="octicon octicon-link"></span></a><strong><em>printcolortable()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Prints a Color table with all the Color Constants.
+             See 'Console Color Constants' for all possible color values.
+      Input: None
+     Output: None
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="newline-x1-" class="anchor" href="#newline-x1-"><span class="octicon octicon-link"></span></a><strong><em>newline( x=1 )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Prints (empty) new lines. Number of new lines varies
+             on the input value.
+             Default: Prints an empty new line.
+      Input: Number of (empty) new lines to print
+     Output: None
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="puts-string-" class="anchor" href="#puts-string-"><span class="octicon octicon-link"></span></a><strong><em>puts( string="" )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Prints a String with a new line.
+             Default: Prints an empty new line.
+      Input: The String to be printed
+     Output: None
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="print-string-" class="anchor" href="#print-string-"><span class="octicon octicon-link"></span></a><strong><em>print( string="" )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Prints a String without a new line. Same as 'puts()' except
+             without a new line.
+             Default: Prints Nothing. 'Flushes' Stdout.
+      Input: The String to be printed
+     Output: None
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="printf-msg-vargs-" class="anchor" href="#printf-msg-vargs-"><span class="octicon octicon-link"></span></a><strong><em>printf( msg, vargs* )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Synonym for 'print("hello" . Name . "!")' except that in this funtion
+             it is used like so 'printf("hello %s!",Name)'. This function is
+             essentially the same as in the 'printf' in C/C++, except here, the
+             only format specifier is '%s', since almost everything in AutoHotkey
+             can be treated as a string.
+             Default: Prints Nothing. 'Flushes' Stdout. (Same behaviour as 'print()'
+      Input: The 'format' String to be printed
+     Output: None
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="putsf-msg-vargs-" class="anchor" href="#putsf-msg-vargs-"><span class="octicon octicon-link"></span></a><strong><em>putsf( msg, vargs* )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Synonym for 'puts("hello" . Name . "!")' except that in this funtion
+             it is used like so 'putsf("hello %s!",Name)'. Same as 'printf()'
+             execept without a new line.
+             Default: Prints a new line. (Same behaviour as 'puts()')
+      Input: The String to be printed
+     Output: None
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="printw-str-" class="anchor" href="#printw-str-"><span class="octicon octicon-link"></span></a><strong><em>printW( str )</em></strong>
+</h4>
+
+<hr><pre><code>Description: "Writes a character string to a console screen buffer  
+             beginning at the current cursor location". This function is  
+             used for Unicode Printing Support. Otherwise, same as print()
+       Note: Fails (with SetConsoleInputCP(65001) = Unicode (UTF-8) ),  
+             if the current (console) font does not have Unicode support,  
+             seems to function otherwise...
+   MSDN URL: http://msdn.microsoft.com/library/ms687401
+      Input: The Unicode/other String to be printed
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="printwf-msg-vargs-" class="anchor" href="#printwf-msg-vargs-"><span class="octicon octicon-link"></span></a><strong><em>printWf( msg, vargs* )</em></strong>
+</h4>
+
+<hr><pre><code>Description: A 'printf()' version of printW(). see 'printf()'
+      Input: The Unicode/other 'format' String to be printed
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="putsw-str-" class="anchor" href="#putsw-str-"><span class="octicon octicon-link"></span></a><strong><em>putsW( str )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Same as 'printfW()' with a new line.
+   MSDN URL: http://msdn.microsoft.com/library/ms687401
+      Input: The Unicode/other String to be printed
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="putswf-msg-vargs-" class="anchor" href="#putswf-msg-vargs-"><span class="octicon octicon-link"></span></a><strong><em>putsWf( msg, vargs* )</em></strong>
+</h4>
+
+<hr><pre><code>Description: A 'printf()' version of putsW(). see 'printf()'
+      Input: The Unicode/other 'format' String to be printed
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="clearscreen" class="anchor" href="#clearscreen"><span class="octicon octicon-link"></span></a><strong><em>ClearScreen()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Clears the Current Console's Screen.
+   Synonyms: 'cls()' and 'Clear()'
+      Input: None
+     Output: None
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="gets-byref-var-" class="anchor" href="#gets-byref-var-"><span class="octicon octicon-link"></span></a><strong><em>gets( ByRef var="" )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Gets/Obtains input from the console user, until a carriage return '`r'
+             has been received. The carriage return is trimmed off (not recorded).
+      Input: The Varible in which to store the inputed/obtained string (Optional)
+     Output: The inputed/obtained string
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getch-byref-keyname-" class="anchor" href="#getch-byref-keyname-"><span class="octicon octicon-link"></span></a><strong><em>getch( ByRef keyname )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Gets/Obtains a single key from the user. This may be used for something
+             like "Press any key to continue" or "press Q to quit".
+             Note: This function is "case sensitive" (Capture)
+      Input: The Varible in which to store the Key Name (string) (Optional)
+     Output: The Key Code
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="wait-timeout0-" class="anchor" href="#wait-timeout0-"><span class="octicon octicon-link"></span></a><strong><em>wait( timeout=0 )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Gets/Obtains a single key from the user. This may be used for something
+             like "Press any key to continue" or "press Q to quit" with a timeout.
+       Note: 'wait()' triggers persistence, meaning the script will not exit
+             automatically when the end of the script has been reached.
+      Input: The number of seconds until timeout (Optional)
+     Output: The Key Code
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="waitaction" class="anchor" href="#waitaction"><span class="octicon octicon-link"></span></a><strong><em>WaitAction()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Gets/Obtains a single input (Captures Everything: mouse move, key press,
+             etc...) from the user. This may be used for something
+             like "Press any key to continue" or "Mouse Click to quit".
+             IMPORTANT Note: This function is still experimental!
+      Input: None
+     Output: The Key Code (vk or sc - Undefined for the moment...)
+     Credit: by gwarble
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="pause-show1-" class="anchor" href="#pause-show1-"><span class="octicon octicon-link"></span></a><strong><em>pause( show=1 )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Wait until the user presses a key. This may be used for something
+             like "Press any key to continue".
+             Default: Displays "Press any key to continue".
+      Input: Display the default message (Boolean) (Optional)
+     Output: None
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="dec2hex-var-" class="anchor" href="#dec2hex-var-"><span class="octicon octicon-link"></span></a><strong><em>dec2hex( var )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Converts a decimal value to a hexadecimal value.
+      Input: The Decimal value to be converted (Number) (Optional)
+     Output: The convert value Hexadecimal value (Number)
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="tobase-n-b-" class="anchor" href="#tobase-n-b-"><span class="octicon octicon-link"></span></a><strong><em>ToBase( n, b )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Converts a decimal value to a specified base value. The base is
+             between 10 to 36 inclusive.
+      Input: The Decimal value to be converted (Number) (Optional)
+     Output: The convert value in the specified base value (Number)
+     Credit: by Laszlo
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="sprogressbar-length-current-max-unlock--0-fixed1-lp-lba-lbb-" class="anchor" href="#sprogressbar-length-current-max-unlock--0-fixed1-lp-lba-lbb-"><span class="octicon octicon-link"></span></a><strong><em>sProgressBar( Length, Current, Max, Unlock = 0, fixed=1, lp="|", lba="[", lbb="]" )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Displays an 'ASCII' progress bar.
+      Input: Length  - The total lenght of the progress bar (strlen)
+             Current - The current progress value
+             Max     - The maximum value possible of progress
+             Unlock  - Remove Length limitations, default: Minimum of 4,
+                       Maximum of 97.
+             fixed   - Forces the progress bar to grow (instead of fixed size)
+                       Example: |||||| 60% Completed
+                                ||||||||| 90% Completed
+                                etc..
+             lp      - Progress Indicator Charater (Line progress)
+             lba     - Start Progress Border Character (Line Border A)
+             lbb     - End Progress Border Character (Line Border B)
+     Output: The 'ASCII' progress bar (String)
+     Credit: by Bugz000 with assistance from tidbit, Chalamius and Bigvent /
+             forked by joedf
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getconsolesize-byref-bufferwidth-byref-bufferheight-" class="anchor" href="#getconsolesize-byref-bufferwidth-byref-bufferheight-"><span class="octicon octicon-link"></span></a><strong><em>getConsoleSize( ByRef bufferwidth, ByRef bufferheight )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Get the Console's buffer size in columns and lines (rows),
+             meaning one line height is a character's height, and the
+             column's width is a character's width.
+      Input: bufferwidth - The Varible in which to store the buffer's width (Number)
+             bufferheight - The Varible in which to store the buffer's height (Number)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getconsolewidth" class="anchor" href="#getconsolewidth"><span class="octicon octicon-link"></span></a><strong><em>getConsoleWidth()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Shorthand for 'getConsoleSize()'. Get the Console's buffer's Width.
+      Input: None
+     Output: The buffer's Width (Number)
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getconsoleheight" class="anchor" href="#getconsoleheight"><span class="octicon octicon-link"></span></a><strong><em>getConsoleHeight()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Shorthand for 'getConsoleSize()'. Get the Console's buffer's Height.
+      Input: None
+     Output: The buffer's Height (Number)
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getconsolehandle" class="anchor" href="#getconsolehandle"><span class="octicon octicon-link"></span></a><strong><em>getConsoleHandle()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Get the console's window Handle (Hwnd).  
+             (usually under the name of hConsole)  
+      Input: None
+     Output: The Console's window handle (Hwnd)
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="flushinput" class="anchor" href="#flushinput"><span class="octicon octicon-link"></span></a><strong><em>flushInput()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Flushes the console input buffer. All input records currently in the  
+             input buffer are discarded.  
+   MSDN URL: http://msdn.microsoft.com/library/ms683147  
+      Input: None  
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getfontsize-byref-fontwidth-byref-fontheight-" class="anchor" href="#getfontsize-byref-fontwidth-byref-fontheight-"><span class="octicon octicon-link"></span></a><strong><em>getFontSize( Byref fontwidth, ByRef fontheight )</em></strong>
+</h4>
+
+<hr><pre><code>Description: the width and height of each character in the font, in logical units.
+             The X member contains the width, while the Y member contains the height.
+      Input: fontwidth - The Varible in which to store the font's width (Number)
+             fontheight - The Varible in which to store the font's height (Number)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getfontwidth" class="anchor" href="#getfontwidth"><span class="octicon octicon-link"></span></a><strong><em>getFontWidth()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Get the current font's width. Shorthand for getFontSize()
+      Input: None
+     Output: The Font's width (in pixels)
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getfontheight" class="anchor" href="#getfontheight"><span class="octicon octicon-link"></span></a><strong><em>getFontHeight()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Get the current font's height. Shorthand for getFontSize()
+      Input: None
+     Output: The Font's height (in pixels)
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="setconsolesize-width-height-sizeheight0-" class="anchor" href="#setconsolesize-width-height-sizeheight0-"><span class="octicon octicon-link"></span></a><strong><em>setConsoleSize( width, height, SizeHeight=0 )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Set the Console's buffer size, No need to worry about the window size,
+             this function does automatic resizing of the console's window if necessary.
+             the size is in columns and lines (rows), meaning one line height is a
+             character's height, and the column's width is a character's width.
+   MSDN URL: http://msdn.microsoft.com/library/ms686044
+      Input: width  - The console's width (Number)
+             height - The console's height (Number)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getconsolecursorposition-byref-x-byref-y-" class="anchor" href="#getconsolecursorposition-byref-x-byref-y-"><span class="octicon octicon-link"></span></a><strong><em>getConsoleCursorPosition( ByRef x, ByRef y )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Get the Cursor's (or caret) current position. The origin is (0,0)
+   MSDN URL: http://msdn.microsoft.com/library/ms683171
+      Input: x - The Varible in which to store the cursor's x pos. (Number)
+             y - The Varible in which to store the cursor's y pos. (Number)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="setconsolecursorposition-x-y-" class="anchor" href="#setconsolecursorposition-x-y-"><span class="octicon octicon-link"></span></a><strong><em>SetConsoleCursorPosition( x="", y="" )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Sets the cursor position in the specified console screen buffer.
+   MSDN URL: http://msdn.microsoft.com/library/ms686025
+      Input: x - The desired Cursor's x pos. (Number)
+             y - The desired Cursor's y pos. (Number)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getconsoleoriginaltitle-byref-title-" class="anchor" href="#getconsoleoriginaltitle-byref-title-"><span class="octicon octicon-link"></span></a><strong><em>GetConsoleOriginalTitle( byRef Title )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Retrieves the original title for the current console window.
+      Input: Title - The variable in which to store the original title. (String)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getconsoletitle-byref-title-" class="anchor" href="#getconsoletitle-byref-title-"><span class="octicon octicon-link"></span></a><strong><em>GetConsoleTitle( byRef Title )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Retrieves the title for the current console window.
+   MSDN URL: http://msdn.microsoft.com/library/ms683174
+      Input: Title - The variable in which to store the current title. (String)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="setconsoletitle-title-" class="anchor" href="#setconsoletitle-title-"><span class="octicon octicon-link"></span></a><strong><em>SetConsoleTitle( title="" )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Sets the title for the current console window.
+   MSDN URL: http://msdn.microsoft.com/library/ms686050
+      Input: title - The desired title for the current console window.
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="setconsoleinputcp-codepage-" class="anchor" href="#setconsoleinputcp-codepage-"><span class="octicon octicon-link"></span></a><strong><em>SetConsoleInputCP( codepage )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Sets the input code page used by the console. A console uses its
+             input code page to translate keyboard input into the corresponding
+             character value.
+   MSDN URL: http://msdn.microsoft.com/library/ms686013
+      Input: codepage - (Number) see "Code Page Identifiers" : http://msdn.microsoft.com/library/dd317756
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getconsoleinputcp" class="anchor" href="#getconsoleinputcp"><span class="octicon octicon-link"></span></a><strong><em>GetConsoleInputCP()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Retrieves the input code page used by the console. A console uses its
+             input code page to translate keyboard input into the corresponding
+             character value.
+   MSDN URL: http://msdn.microsoft.com/library/ms683162
+      Input: None
+     Output: codepage - (Number) see "Code Page Identifiers" : http://msdn.microsoft.com/library/dd317756
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="setconsoleoutputcp-codepage-" class="anchor" href="#setconsoleoutputcp-codepage-"><span class="octicon octicon-link"></span></a><strong><em>SetConsoleOutputCP( codepage )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Sets the output code page used by the console. A console uses its
+             output code page to translate the character values written by the
+             various output functions into the images displayed in the console window.
+   MSDN URL: http://msdn.microsoft.com/library/ms686036
+      Input:  codepage - (Number) see "Code Page Identifiers" : http://msdn.microsoft.com/library/dd317756
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="getconsoleoutputcp" class="anchor" href="#getconsoleoutputcp"><span class="octicon octicon-link"></span></a><strong><em>GetConsoleOutputCP()</em></strong>
+</h4>
+
+<hr><pre><code>Description: Retrieves the output code page used by the console. A console uses its
+             output code page to translate the character values written by the 
+             various output functions into the images displayed in the console window.
+   MSDN URL: http://msdn.microsoft.com/library/ms683169
+      Input: None
+     Output: codepage - (Number) see "Code Page Identifiers" : http://msdn.microsoft.com/library/dd317756
+</code></pre>
+
+<p><a></a></p>
+
+<h4>
+<a name="libconerror-fname-arg1-arg2-arg3-arg4-" class="anchor" href="#libconerror-fname-arg1-arg2-arg3-arg4-"><span class="octicon octicon-link"></span></a><strong><em>LibConError( fname:="", arg1:="", arg2:="", arg3:="", arg4:="" )</em></strong>
+</h4>
+
+<hr><pre><code>Description: Explicit Error Handling towards the user. Msgboxes for Errors (DebugMode Only)
+             (Abort, Retry, Ignore). See source for usage... Used for Basic ErrorHandling.
+      Input: fname - the function's callname
+             arg1  - the 1st which the function was called with.
+             arg.. - etc...
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a></a></p>
+
+<h2>
+<a name="global-vars" class="anchor" href="#global-vars"><span class="octicon octicon-link"></span></a>Global Vars</h2>
+
+<hr><p><a></a></p>
+
+<h3>
+<a name="defaults" class="anchor" href="#defaults"><span class="octicon octicon-link"></span></a>Defaults</h3>
+
+<hr><pre><code>SetWinDelay, 0
+SetBatchLines,-1
+</code></pre>
+
+<p><a></a></p>
+
+<h3>
+<a name="predefined-variables" class="anchor" href="#predefined-variables"><span class="octicon octicon-link"></span></a>Predefined Variables</h3>
+
+<hr><p><strong><em>LibConDebug</em></strong> is either set 1 (true) or 0 (false) to enable/disable LibConDebug Mode.<br><em>Definition (default):</em> <code>LibConDebug := 0 ;Enable/Disable DebugMode</code></p>
+
+<p><strong><em>LibConErrorLevel</em></strong> is a variable that is used internally for LibConDebug Mode.<br><em>Definition:</em> <code>LibConErrorLevel := 0 ;Used For DebugMode</code></p>
+
+<p><strong><em>sType</em></strong> is an Object that is used when coding with structures and DllCalls.<br><em>Definition:</em><br><code>;Type sizes (Bytes) // http://msdn.microsoft.com/library/aa383751.aspx</code><br><code>sType := Object("SHORT", 2, "COORD", 4, "WORD", 2, "SMALL_RECT", 8, "DWORD", 4, "LONG", 4)</code></p>
+
+<p><strong><em>Stdin</em></strong> is an Object that is used to reference the currently attached console's Input buffer.<br><em>Definition:</em> <code>Stdin := FileOpen(DllCall("GetStdHandle", "int", -10, "ptr"), "h `n")</code></p>
+
+<p><strong><em>Stdout</em></strong> is an Object that is used to reference the currently attached console's Output buffer.<br><em>Definition:</em> <code>Stdout :=FileOpen(DllCall("GetStdHandle", "int", -11, "ptr"), "h `n")</code></p>
+
+<p><a></a></p>
+
+<h3>
+<a name="console-color-constants" class="anchor" href="#console-color-constants"><span class="octicon octicon-link"></span></a>Console Color Constants</h3>
+
+<hr><pre><code>Black:=0x0
+DarkBlue:=0x1
+DarkGreen:=0x2
+Turquoise:=0x3
+DarkGreenBlue:=0x3
+GreenBlue:=0x3
+DarkRed:=0x4
+Purple:=0x5
+Brown:=0x6
+Gray:=0x7
+Grey:=0x7
+DarkGray:=0x8
+DarkGrey:=0x8
+Blue:=0x9
+Green:=0xA
+Cyan:=0xB
+Red:=0xC
+Magenta:=0xD
+Pink:=0xD
+Yellow:=0xE
+White:=0xF
+</code></pre></body></html><script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
