@@ -2,7 +2,7 @@ a:active {
   position: relative;
   top: 1px;
 }
-.fork, .fork:* {
+.fork, .fork:*, .fork img, .fork:first-child {
   width:140px;
   height:140px;
   position: absolute;
