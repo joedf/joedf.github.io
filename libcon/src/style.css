@@ -5,7 +5,7 @@ a:active {
 .fork, .fork:first-child {
   width:140px;
   height:140px;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   border: 0;
