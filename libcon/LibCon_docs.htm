@@ -561,6 +561,7 @@ It contains a few type sizes (Bytes). See "<a href="http://msdn.microsoft.com/li
 <p><strong><em>Stdout</em></strong> is an Object that is used to reference the currently attached console's Output buffer.<br />
 <em>Definition:</em> <code>Stdout :=FileOpen(DllCall("GetStdHandle", "int", -11, "ptr"), "h `n")</code></p>
 <p><strong><em>args</em></strong> is an Object that is used to reference the arguments the script has received.<br />
+The object is created only when the number of arguments is greater than zero.
 Note: <code>if (args)</code> will return true, if the object exists, otherwise, it will return false.</p>
 <ul>
 <li><strong><em>args.CSV</em></strong> (or args["CSV"]) - Contains the arguments in <a href="http://en.wikipedia.org/w/index.php?title=Comma-separated_values&amp;oldid=574459319">CSV</a> format.</li>
@@ -593,4 +594,4 @@ Magenta:=0xD
 Pink:=0xD
 Yellow:=0xE
 White:=0xF
-</code></pre></body></html><script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</code></pre></body></html>
