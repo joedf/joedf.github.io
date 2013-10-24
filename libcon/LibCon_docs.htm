@@ -34,6 +34,7 @@
 <li><a href="#gets-byref-var-">Gets( ByRef var="" )</a></li>
 <li><a href="#getch-byref-keyname-">Getch( ByRef keyname )</a></li>
 <li><a href="#clearscreen">ClearScreen()</a></li>
+<li><a href="#fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten-">FillConsoleOutputCharacter( cCharacter, nLength, x, y, ByRef lpNumberOfCharsWritten="" )</a></li>
 <li><a href="#flushinput">FlushInput()</a></li>
 </ul>
 </li>
@@ -46,6 +47,7 @@
 <li><a href="#getfgcolor">GetFgColor()</a></li>
 <li><a href="#getbgcolor">GetBgColor()</a></li>
 <li><a href="#printcolortable">PrintColorTable()</a></li>
+<li><a href="#fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten-">FillConsoleOutputAttribute( wAttribute, nLength, x, y, ByRef lpNumberOfAttrsWritten="" )</a></li>
 </ul>
 </li>
 <li>Size, Position &amp; Text<ul>
@@ -71,7 +73,7 @@
 </li>
 <li>Miscellaneous Functions<ul>
 <li><a href="#getconsolehandle">GetConsoleHandle()</a></li>
-<li><a href="#libconerror-fname-arg1-arg2-arg3-arg4-">LibConError( fname:="", arg1:="", arg2:="", arg3:="", arg4:="" )</a></li>
+<li><a href="#libconerror-fname-arg1-arg2-arg3-arg4-arg5-">LibConError( fname:="", arg1:="", arg2:="", arg3:="", arg4:="", arg5:="" )</a></li>
 <li><a href="#wait-timeout0-">Wait( timeout=0 )</a></li>
 <li><a href="#waitaction">WaitAction()</a></li>
 <li><a href="#pause-show1-">Pause( show=1 )</a></li>
@@ -206,15 +208,34 @@
 <hr />
 <pre><code>Description: Clears the Current Console's Screen.
    Synonyms: 'cls()' and 'Clear()'
+   MSDN URL: http://msdn.microsoft.com/library/ms682022
       Input: None
      Output: None
+</code></pre>
+
+<p><a id="fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten-"></a></p>
+<h4 id="fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten"><strong><em>FillConsoleOutputCharacter( cCharacter, nLength, x, y, ByRef lpNumberOfCharsWritten="" )</em></strong></h4>
+<hr />
+<pre><code>Description: Writes a character to the console screen buffer a specified number of times,
+             beginning at the specified coordinates.
+   MSDN URL: http://msdn.microsoft.com/library/ms682663
+      Input: cCharacter - The character to be written to the console screen buffer.
+             nLength    - The number of character cells to which the character
+                          should be written.
+             x          - The x coordinate of the COORD structure that specifies
+                          the character coordinates of the first cell to which the
+                          character is to be written.
+             y          - The y coordinate of the COORD structure.
+             lpNumberOfCharsWritten - The Varible in which to store the number characters
+                                      to the console screen buffer.
+     Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
 <p><a id="flushinput"></a></p>
 <h4 id="flushinput"><strong><em>FlushInput()</em></strong></h4>
 <hr />
 <pre><code>Description: Flushes the console input buffer. All input records currently in the  
-       input buffer are discarded.  
+             input buffer are discarded.  
    MSDN URL: http://msdn.microsoft.com/library/ms683147  
       Input: None  
      Output: Success is Non-Zero, Failure is Zero
@@ -287,11 +308,29 @@
      Output: None
 </code></pre>
 
+<p><a id="fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten-"></a></p>
+<h4 id="fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten"><strong><em>FillConsoleOutputAttribute( wAttribute, nLength, x, y, ByRef lpNumberOfAttrsWritten="" )</em></strong></h4>
+<hr />
+<pre><code>Description: Sets the character attributes for a specified number of character cells,
+             beginning at the specified coordinates in a screen buffer.
+   MSDN URL: http://msdn.microsoft.com/library/ms682662
+      Input: wAttribute - The &quot;Character attributes&quot; to use when writing to the console screen
+                          buffer. Basically, the Color : GetColor() is applicable here.
+             nLength    - The number of character cells to be set to the specified
+                          color attributes.
+             x          - The x coordinate of the COORD structure that specifies the character
+                          coordinates of the first cell whose attributes are to be set.
+             y          - The y coordinate of the COORD structure.
+             lpNumberOfAttrsWritten - The Varible in which to store the number of character
+                                      cells whose attributes were actually set.
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
 <p><a id="getfontsize-byref-fontwidth-byref-fontheight-"></a></p>
 <h4 id="getfontsize-byref-fontwidth-byref-fontheight"><strong><em>GetFontSize( Byref fontwidth, ByRef fontheight )</em></strong></h4>
 <hr />
 <pre><code>Description: the width and height of each character in the font, in logical units.
-             The X member contains the width, while the Y member contains the height.
+       The X member contains the width, while the Y member contains the height.
       Input: fontwidth - The Varible in which to store the font's width (Number)
              fontheight - The Varible in which to store the font's height (Number)
      Output: Success is Non-Zero, Failure is Zero
@@ -452,8 +491,8 @@
      Output: The Console's window handle (Hwnd)
 </code></pre>
 
-<p><a id="libconerror-fname-arg1-arg2-arg3-arg4-"></a></p>
-<h4 id="libconerror-fname-arg1-arg2-arg3-arg4"><strong><em>LibConError( fname:="", arg1:="", arg2:="", arg3:="", arg4:="" )</em></strong></h4>
+<p><a id="libconerror-fname-arg1-arg2-arg3-arg4-arg5-"></a></p>
+<h4 id="libconerror-fname-arg1-arg2-arg3-arg4-arg5"><strong><em>LibConError( fname:="", arg1:="", arg2:="", arg3:="", arg4:="", arg5:="" )</em></strong></h4>
 <hr />
 <pre><code>Description: Explicit Error Handling towards the user. Msgboxes for Errors (DebugMode Only)
              (Abort, Retry, Ignore). See source for usage... Used for Basic ErrorHandling.
