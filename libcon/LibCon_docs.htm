@@ -35,7 +35,10 @@
 <li><a href="#getch-byref-keyname-">Getch( ByRef keyname )</a></li>
 <li><a href="#clearscreen">ClearScreen()</a></li>
 <li><a href="#fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten-">FillConsoleOutputCharacter( cCharacter, nLength, x, y, ByRef lpNumberOfCharsWritten="" )</a></li>
+<li><a href="#readconsoleoutputcharacter-byref-lpcharacter-nlength-x-y-byref-lpnumberofcharsread-">ReadConsoleOutputCharacter( ByRef lpCharacter, nLength, x, y, ByRef lpNumberOfCharsRead="" )</a></li>
 <li><a href="#flushinput">FlushInput()</a></li>
+<li><a href="#getcurrentdirectory">GetCurrentDirectory()</a></li>
+<li><a href="#setcurrentdirectory-dir-">SetCurrentDirectory( dir )</a></li>
 </ul>
 </li>
 <li>Console Properties &amp; Settings<ul>
@@ -43,11 +46,12 @@
 <li><a href="#setcolor-fg-bg-">SetColor( FG="", BG="" )</a></li>
 <li><a href="#setfgcolor-c-">SetFgColor( c )</a></li>
 <li><a href="#setbgcolor-c-">SetBgColor( c )</a></li>
-<li><a href="#getcolor">GetColor()</a></li>
+<li><a href="#getcolor-byref-fgcolor-byref-bgcolor-">GetColor( ByRef FgColor="", ByRef BgColor="" )</a></li>
 <li><a href="#getfgcolor">GetFgColor()</a></li>
 <li><a href="#getbgcolor">GetBgColor()</a></li>
 <li><a href="#printcolortable">PrintColorTable()</a></li>
 <li><a href="#fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten-">FillConsoleOutputAttribute( wAttribute, nLength, x, y, ByRef lpNumberOfAttrsWritten="" )</a></li>
+<li><a href="#readconsoleoutputattribute-byref-lpattribute-nlength-x-y-byref-lpnumberofattrsread-">ReadConsoleOutputAttribute( ByRef lpAttribute, nLength, x, y, ByRef lpNumberOfAttrsRead="" )</a></li>
 </ul>
 </li>
 <li>Size, Position &amp; Text<ul>
@@ -58,8 +62,13 @@
 <li><a href="#getconsolewidth">GetConsoleWidth()</a></li>
 <li><a href="#getconsoleheight">GetConsoleHeight()</a></li>
 <li><a href="#setconsolesize-width-height-sizeheight0-">SetConsoleSize( width, height, SizeHeight=0 )</a></li>
+<li><a href="#getconsoleclientsize-byref-width-byref-height-">GetConsoleClientSize( ByRef width, ByRef height )</a></li>
+<li><a href="#getconsoleclientwidth">GetConsoleClientWidth()</a></li>
+<li><a href="#getconsoleclientheight">GetConsoleClientHeight()</a></li>
 <li><a href="#getconsolecursorposition-byref-x-byref-y-">GetConsoleCursorPosition( ByRef x, ByRef y )</a></li>
-<li><a href="#setconsolecursorposition-x--y--">SetConsoleCursorPosition( x="", y="" )</a></li>
+<li><a href="#setconsolecursorposition-x-y-">SetConsoleCursorPosition( x="", y="" )</a></li>
+<li><a href="#setconsolecursorinfo-size-shown-">SetConsoleCursorInfo( Size="", Shown="" )</a></li>
+<li><a href="#getconsolecursorinfo-byref-size-byref-shown-">GetConsoleCursorInfo( ByRef Size="", ByRef Shown="" )</a></li>
 <li><a href="#getconsoleoriginaltitle-byref-title-">GetConsoleOriginalTitle( byRef Title )</a></li>
 <li><a href="#getconsoletitle-byref-title-">GetConsoleTitle( byRef Title )</a></li>
 <li><a href="#setconsoletitle-title-">SetConsoleTitle( title="" )</a></li>
@@ -67,13 +76,15 @@
 <li><a href="#getconsoleinputcp">GetConsoleInputCP()</a></li>
 <li><a href="#setconsoleoutputcp-codepage-">SetConsoleOutputCP( codepage )</a></li>
 <li><a href="#getconsoleoutputcp">GetConsoleOutputCP()</a></li>
+<li><a href="#setconsolemode-mode-">SetConsoleMode( Mode )</a></li>
+<li><a href="#getconsolemode-byref-mode-">GetConsoleMode( ByRef Mode )</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Miscellaneous Functions<ul>
 <li><a href="#getconsolehandle">GetConsoleHandle()</a></li>
-<li><a href="#libconerror-fname-byref-arg1-arg2-arg3-arg4-arg5-">LibConError( fname:="", ByRef arg1:="", arg2:="", arg3:="", arg4:="", arg5:="" )</a></li>
+<li><a href="#libconerror-fname-byref-arg1-byref-arg2-arg3-arg4-byref-arg5-">LibConError( fname:="", ByRef arg1:="", ByRef arg2:="", arg3:="", arg4:="", ByRef arg5:="" )</a></li>
 <li><a href="#wait-timeout0-">Wait( timeout=0 )</a></li>
 <li><a href="#waitaction">WaitAction()</a></li>
 <li><a href="#pause-show1-">Pause( show=1 )</a></li>
@@ -235,6 +246,22 @@
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
+<p><a id="readconsoleoutputcharacter-byref-lpcharacter-nlength-x-y-byref-lpnumberofcharsread-"></a></p>
+<h4 id="readconsoleoutputcharacter-byref-lpcharacter-nlength-x-y-byref-lpnumberofcharsread"><strong><em>ReadConsoleOutputCharacter( ByRef lpCharacter, nLength, x, y, ByRef lpNumberOfCharsRead="" )</em></strong></h4>
+<hr />
+<pre><code>Description: Reads a number of characters from consecutive cells of a console screen buffer,
+             beginning at a specified location.
+   MSDN URL: http://msdn.microsoft.com/library/ms684969
+      Input: lpCharacter - The variable in which to store the characters read from the
+                           console screen buffer.
+             nLength     - The number of character cells to be read.
+             x           - The x coordinate of the COORD structure that specifies the
+                           character coordinates of the first cell from which to read.
+             y           - The y coordinate of the COORD structure.
+             lpNumberOfCharsRead - The Varible in which to store the number characters read.
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
 <p><a id="flushinput"></a></p>
 <h4 id="flushinput"><strong><em>FlushInput()</em></strong></h4>
 <hr />
@@ -245,11 +272,32 @@
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
+<p><a id="getcurrentdirectory"></a></p>
+<h4 id="getcurrentdirectory"><strong><em>GetCurrentDirectory()</em></strong></h4>
+<hr />
+<pre><code>Description: Retrieves the current working directory for the current process.
+   MSDN URL: http://msdn.microsoft.com/library/aa364934
+      Input: None  
+     Output: The Current working directory (Absolute Path). (String)
+</code></pre>
+
+<p><a id="setcurrentdirectory-dir-"></a></p>
+<h4 id="setcurrentdirectory-dir"><strong><em>SetCurrentDirectory( dir )</em></strong></h4>
+<hr />
+<pre><code>Description: Changes the current working directory for the current process.
+   MSDN URL: http://msdn.microsoft.com/library/aa365530
+      Input: dir - The path to the new current working directory.
+                   Note: Absolute, Relative, Drives and UNC Path are all accepted.
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
 <p><a id="setcolor-fg-bg-"></a></p>
 <h4 id="setcolor-fg-bg"><strong><em>SetColor( FG="", BG="" )</em></strong></h4>
 <hr />
 <pre><code>Description: Sets the Current Console's Foreground and Background Colors.
              (A.K.A. Text color and Text Background color)
+     Notice: To set the color that received from getColor(), set FG to that
+             value, and BG to '0' (zero).
       Input: FG (Foreground) - Set the Foreground color (Hexadecimal Value)
              BG (Background) - Set the Background color (Hexadecimal Value)
              Note: The 'Console Color Constants' may be used here.
@@ -273,15 +321,17 @@
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
-<p><a id="getcolor"></a></p>
-<h4 id="getcolor"><strong><em>GetColor()</em></strong></h4>
+<p><a id="getcolor-byref-fgcolor-byref-bgcolor-"></a></p>
+<h4 id="getcolor-byref-fgcolor-byref-bgcolor"><strong><em>GetColor( ByRef FgColor="", ByRef BgColor="" )</em></strong></h4>
 <hr />
 <pre><code>Description: Returns the current color (Hexadecimal Value)
-             Note: It may be suggest to simply use the 'getFgColor()'
-             and the 'getBgColor()' functions instead since they are
-             more user friendly. See 'Console Color Constants' for all
-             possible color values.
-      Input: None
+             Note: The color returned is both the background and foreground
+             colors combined. One may use 'getFgColor()' or 'getBgColor()'
+             functions instead get only one of the two colors.
+             See 'Console Color Constants' for all possible color values.
+     Notice: Later, to set a &quot;combined&quot; color, use: SetColor(YourValueHere,0)
+      Input: FgColor - The Varible in which to store the Foreground color (Hex Value)
+             BgColor - The Varible in which to store the Background color (Hex Value)
      Output: Success is Non-Zero, Failure is Undefined
 </code></pre>
 
@@ -327,6 +377,22 @@
              y          - The y coordinate of the COORD structure.
              lpNumberOfAttrsWritten - The Varible in which to store the number of character
                                       cells whose attributes were actually set.
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="readconsoleoutputattribute-byref-lpattribute-nlength-x-y-byref-lpnumberofattrsread-"></a></p>
+<h4 id="readconsoleoutputattribute-byref-lpattribute-nlength-x-y-byref-lpnumberofattrsread"><strong><em>ReadConsoleOutputAttribute( ByRef lpAttribute, nLength, x, y, ByRef lpNumberOfAttrsRead="" )</em></strong></h4>
+<hr />
+<pre><code>Description: Gets the character attributes for a specified number of character cells,
+             beginning at the specified coordinates in a screen buffer.
+   MSDN URL: http://msdn.microsoft.com/library/ms684968
+      Input: lpAttribute - The variable in which to store the &quot;Character attributes&quot; to used by console
+                           at the specified position.
+             nLength     - The number of screen buffer character cells from which to read.
+             x           - The x coordinate of the COORD structure that specifies the character
+                           coordinates of the first cell from which to read.
+             y           - The y coordinate of the COORD structure.
+             lpNumberOfAttrsRead - The Varible in which to store the number of attributes actually read.
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
@@ -398,23 +464,74 @@
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
+<p><a id="getconsoleclientsize-byref-width-byref-height-"></a></p>
+<h4 id="getconsoleclientsize-byref-width-byref-height"><strong><em>GetConsoleClientSize( ByRef width, ByRef height )</em></strong></h4>
+<hr />
+<pre><code>Description: Get the Console's Client Area size in pixels.
+      Input: width  - The Varible in which to store the console's client width (Number)
+             height - The Varible in which to store the console's client height (Number)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="getconsoleclientwidth"></a></p>
+<h4 id="getconsoleclientwidth"><strong><em>GetConsoleClientWidth()</em></strong></h4>
+<hr />
+<pre><code>Description: Shorthand for 'GetConsoleClientSize()'. Get the Console's buffer's Width.
+      Input: None
+     Output: The console's client (Area) width (Number)
+</code></pre>
+
+<p><a id="getconsoleclientheight"></a></p>
+<h4 id="getconsoleclientheight"><strong><em>GetConsoleClientHeight()</em></strong></h4>
+<hr />
+<pre><code>Description: Shorthand for 'GetConsoleClientSize()'. Get the Console's buffer's Width.
+      Input: None
+     Output: The console's client (Area) height (Number)
+</code></pre>
+
 <p><a id="getconsolecursorposition-byref-x-byref-y-"></a></p>
 <h4 id="getconsolecursorposition-byref-x-byref-y"><strong><em>GetConsoleCursorPosition( ByRef x, ByRef y )</em></strong></h4>
 <hr />
-<pre><code>Description: Get the Cursor's (or caret) current position. The origin is (0,0)
+<pre><code>Description: Get the Cursor's (or caret) current position.
+       Note: The origin is (0,0)
    MSDN URL: http://msdn.microsoft.com/library/ms683171
       Input: x - The Varible in which to store the cursor's x pos. (Number)
              y - The Varible in which to store the cursor's y pos. (Number)
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
-<p><a id="setconsolecursorposition-x--y--"></a></p>
+<p><a id="setconsolecursorposition-x-y-"></a></p>
 <h4 id="setconsolecursorposition-x-y"><strong><em>SetConsoleCursorPosition( x="", y="" )</em></strong></h4>
 <hr />
-<pre><code>Description: Sets the cursor position in the specified console screen buffer.
+<pre><code>Description: Sets the cursor position.
+       Note: The origin is (0,0)
    MSDN URL: http://msdn.microsoft.com/library/ms686025
       Input: x - The desired Cursor's x pos. (Number)
              y - The desired Cursor's y pos. (Number)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="setconsolecursorinfo-size-shown-"></a></p>
+<h4 id="setconsolecursorinfo-size-shown"><strong><em>SetConsoleCursorInfo( Size="", Shown="" )</em></strong></h4>
+<hr />
+<pre><code>Description: Sets the cursor height (size) and visibility.
+   MSDN URL: http://msdn.microsoft.com/library/ms686019
+      Input: Size  - The percentage of a character cell that is filled by the
+                     cursor. (Range 1 - 100)
+             Shown - The visibility of the cursor. Set to false (zero) to hide
+                     the cursor. (Boolean)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="getconsolecursorinfo-byref-size-byref-shown-"></a></p>
+<h4 id="getconsolecursorinfo-byref-size-byref-shown"><strong><em>GetConsoleCursorInfo( ByRef Size="", ByRef Shown="" )</em></strong></h4>
+<hr />
+<pre><code>Description: Gets the cursor height (size) and visibility.
+   MSDN URL: http://msdn.microsoft.com/library/ms683163
+      Input: Size  - The variable in which to store the percentage of a character
+                     cell that is filled by the cursor. (Range 1 - 100)
+             Shown - The variable in which to store the visibility of the cursor.
+                     Set to false (zero), if the cursor is hidden. (Boolean)
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
@@ -473,7 +590,7 @@
              output code page to translate the character values written by the
              various output functions into the images displayed in the console window.
    MSDN URL: http://msdn.microsoft.com/library/ms686036
-      Input:  codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
+      Input: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
@@ -488,6 +605,26 @@
      Output: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
 </code></pre>
 
+<p><a id="setconsolemode-mode-"></a></p>
+<h4 id="setconsolemode-mode"><strong><em>SetConsoleMode( Mode )</em></strong></h4>
+<hr />
+<pre><code>Description: Sets the input buffer's mode of the console. (Output not yet supported)
+   MSDN URL: http://msdn.microsoft.com/library/ms686033
+      Input: Mode - the console mode to be used (Hexadecimal/Number)
+             see the Console modes : http://msdn.microsoft.com/library/ms686033
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="getconsolemode-byref-mode-"></a></p>
+<h4 id="getconsolemode-byref-mode"><strong><em>GetConsoleMode( ByRef Mode )</em></strong></h4>
+<hr />
+<pre><code>Description: Gets the output buffer's mode of the console. (Input not yet supported)
+   MSDN URL: http://msdn.microsoft.com/library/ms683167
+      Input: Mode - The variable in which to store the console mode currently used (Hexadecimal/Number)
+             see the Console modes : http://msdn.microsoft.com/library/ms686033
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
 <p><a id="getconsolehandle"></a></p>
 <h4 id="getconsolehandle"><strong><em>GetConsoleHandle()</em></strong></h4>
 <hr />
@@ -497,8 +634,8 @@
      Output: The Console's window handle (Hwnd)
 </code></pre>
 
-<p><a id="libconerror-fname-byref-arg1-arg2-arg3-arg4-arg5-"></a></p>
-<h4 id="libconerror-fname-byref-arg1-arg2-arg3-arg4-arg5"><strong><em>LibConError( fname:="", ByRef arg1:="", arg2:="", arg3:="", arg4:="", arg5:="" )</em></strong></h4>
+<p><a id="libconerror-fname-byref-arg1-byref-arg2-arg3-arg4-byref-arg5-"></a></p>
+<h4 id="libconerror-fname-byref-arg1-byref-arg2-arg3-arg4-byref-arg5"><strong><em>LibConError( fname:="", ByRef arg1:="", ByRef arg2:="", arg3:="", arg4:="", ByRef arg5:="" )</em></strong></h4>
 <hr />
 <pre><code>Description: Explicit Error Handling towards the user. Msgboxes for Errors (DebugMode Only)
              (Abort, Retry, Ignore). See source for usage... Used for Basic ErrorHandling.
@@ -589,13 +726,16 @@
 <p><a id="defaults"></a></p>
 <h3 id="defaults">Defaults</h3>
 <hr />
-<pre><code>SetWinDelay, 0
+<pre><code>SetKeyDelay, 0
+SetWinDelay, 0
 SetBatchLines,-1
 </code></pre>
 
 <p><a id="predefined-variables--objects"></a></p>
 <h3 id="predefined-variables-objects">Predefined Variables &amp; Objects</h3>
 <hr />
+<p><strong><em>LibConVersion</em></strong> is a string that is set to the current version of LibCon used.
+<em>Definition (example):</em> <code>LibConVersion := "1.0.4.1" ;Library Version</code></p>
 <p><strong><em>LibConDebug</em></strong> is either set 1 (true) or 0 (false) to enable/disable LibConDebug Mode.<br />
 <em>Definition (default):</em> <code>LibConDebug := 0 ;Enable/Disable DebugMode</code></p>
 <p><strong><em>LibConErrorLevel</em></strong> is a variable that is used internally for LibConDebug Mode.<br />
@@ -625,15 +765,11 @@ Note: <code>if (args)</code> will return true, if the object exists, otherwise, 
 DarkBlue:=0x1
 DarkGreen:=0x2
 Turquoise:=0x3
-DarkGreenBlue:=0x3
-GreenBlue:=0x3
 DarkRed:=0x4
 Purple:=0x5
 Brown:=0x6
 Gray:=0x7
-Grey:=0x7
 DarkGray:=0x8
-DarkGrey:=0x8
 Blue:=0x9
 Green:=0xA
 Cyan:=0xB
