@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>Examples</title>
+<link rel="stylesheet" type="text/css" href="src/markdown.css">
+<link rel="stylesheet" type="text/css" href="src/style.css">
+</head><body>
+<div class="fork" unselectable="on">
+	<img src="src/forkme_right_red_aa0000.png" alt="Fork me on GitHub" usemap="#forkme_map">
+	<map name="forkme_map">
+	<area shape="poly" coords="15,0,57,0,149,92,149,134" alt="ForkMe" href="https://github.com/joedf/LibCon.ahk">
+	</map>
+</div>
+<h1 id="libcon-examples">LibCon : Examples</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#example-1--simple-usage">Example 1 : Simple Usage</a></li>
+<li><a href="#example-2--gui-interaction">Example 2 : GUI Interaction</a></li>
+<li><a href="#example-3--advanced-usage">Example 3 : Advanced Usage</a></li>
+<li><a href="#screenshots">ScreenShots</a>
+<br><br>
+<a id="example-1--simple-usage"></a></li>
+</ul>
+<h4 id="example-1-simple-usage"><strong><em>Example 1 : Simple Usage</em></strong></h4>
+<hr />
+<p>Description:</p>
+<blockquote>
+<p>This example shows how to display text on the console, as well as get text from the user. It also shows how to set the text color, background color. Provides a usage example of the intergrated progress bar function.  </p>
+<p>Essentially, all the basics of CLI (Command-Line Interface).</p>
+</blockquote>
+<p>Functions used:</p>
+<ul>
+<li>SmartStartConsole()</li>
+<li>Puts(), Putsf(), Print(), Printf()</li>
+<li>NewLine()</li>
+<li>Pause()</li>
+<li>Gets(), Getch()</li>
+<li>SetFgColor()</li>
+<li>sProgressBar()</li>
+<li>PrintColorTable()</li>
+<li>FreeConsole()</li>
+</ul>
+<p><a href="https://github.com/joedf/LibCon.ahk/blob/master/Example.ahk">View Source</a><br />
+<a href="#preview">View ScreenShot</a><br />
+<br>
+<a id="example-2--gui-interaction"></a></p>
+<h4 id="example-2-gui-interaction"><strong><em>Example 2 : GUI Interaction</em></strong></h4>
+<hr />
+<p>Description:</p>
+<blockquote>
+<p>This example is basically a follow-up of example 1. It shows how to the interaction between GUI and CLI can be implemented.  </p>
+<p>Essentially, a deeper look at the "basics".</p>
+</blockquote>
+<p>Functions used:</p>
+<ul>
+<li>SmartStartConsole()</li>
+<li>Puts(), Putsf(), Print()</li>
+<li>Gets()</li>
+<li>GetConsoleInputCP(), GetConsoleOutputCP()</li>
+</ul>
+<p><a href="https://github.com/joedf/LibCon.ahk/blob/master/Example2.ahk">View Source</a><br />
+<br>
+<a id="example-3--advanced-usage"></a></p>
+<h4 id="example-3-advanced-usage"><strong><em>Example 3 : Advanced Usage</em></strong></h4>
+<hr />
+<p>Description:</p>
+<blockquote>
+<p>This example is was originally implemented to push the limits of LibCon a little further than the "basics". It involves a DOS style GUI, similar to Word 5.5a using "text-based GUI". This considered a more profound example. It has been simplified and commented greatly to demonstration the basic concept of "drawing" in the console, or otherwise, "GUI drawing".</p>
+<p>Essentially, an example that takes a deeper look at the more advanced console functions.</p>
+</blockquote>
+<p>Functions used:</p>
+<ul>
+<li>StartConsole()</li>
+<li>GetConsoleSize(), SetConsoleSize()</li>
+<li>SetColor(), GetColor()</li>
+<li>GetConsoleCursorInfo(), SetConsoleCursorInfo()</li>
+<li>SetConsoleCursorPos()</li>
+<li>GetConsoleMode(), SetConsoleMode()</li>
+<li>Puts(), Putsf(), Print(), Printf()</li>
+<li>NewLine()</li>
+<li>GetFontWidth(), GetFontHeight()</li>
+<li>GetConsoleWidth()</li>
+<li>GetConsoleClientHeight()</li>
+<li>ClearScreen()</li>
+<li>FillConsoleOutputAttribute()</li>
+<li>ReadConsoleOutputAttribute()</li>
+</ul>
+<p><a href="https://github.com/joedf/LibCon.ahk/blob/master/Example3.ahk">View Source</a><br />
+<a href="#preview2">View ScreenShot</a><br />
+<br>
+<a id="screenshots"></a></p>
+<h4 id="screenshots"><strong><em>ScreenShots</em></strong></h4>
+<hr />
+<p><a id="preview"></a></p>
+<h5 id="example-1">Example 1</h5>
+<p><img alt="Example 1" src="src/preview.png" title="Preview" /><br />
+<a id="preview2"></a> </p>
+<h5 id="example-3">Example 3</h5>
+<p><img alt="Example 3" src="src/preview2.png" title="Preview 2" /><br />
+<br></p></body></html>
