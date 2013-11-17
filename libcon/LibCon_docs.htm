@@ -27,6 +27,7 @@
 </ul>
 </li>
 <li>Input and Output Functions<ul>
+<li>User Interface<ul>
 <li><a href="#newline-x1-">NewLine( x=1 )</a></li>
 <li><a href="#puts-string-">Puts( string="" )</a></li>
 <li><a href="#print-string-">Print( string="" )</a></li>
@@ -37,9 +38,21 @@
 <li><a href="#clearscreen">ClearScreen()</a></li>
 <li><a href="#fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten-">FillConsoleOutputCharacter( cCharacter, nLength, x, y, ByRef lpNumberOfCharsWritten="" )</a></li>
 <li><a href="#readconsoleoutputcharacter-byref-lpcharacter-nlength-x-y-byref-lpnumberofcharsread-">ReadConsoleOutputCharacter( ByRef lpCharacter, nLength, x, y, ByRef lpNumberOfCharsRead="" )</a></li>
-<li><a href="#flushinput">FlushInput()</a></li>
-<li><a href="#getcurrentdirectory">GetCurrentDirectory()</a></li>
+</ul>
+</li>
+<li>File I/O<ul>
 <li><a href="#setcurrentdirectory-dir-">SetCurrentDirectory( dir )</a></li>
+<li><a href="#getcurrentdirectory">GetCurrentDirectory()</a></li>
+</ul>
+</li>
+<li>Other<ul>
+<li><a href="#flushinput">FlushInput()</a></li>
+<li><a href="#setconsoleinputcp-codepage-">SetConsoleInputCP( codepage )</a></li>
+<li><a href="#getconsoleinputcp">GetConsoleInputCP()</a></li>
+<li><a href="#setconsoleoutputcp-codepage-">SetConsoleOutputCP( codepage )</a></li>
+<li><a href="#getconsoleoutputcp">GetConsoleOutputCP()</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Console Properties &amp; Settings<ul>
@@ -47,15 +60,17 @@
 <li><a href="#setcolor-fg-bg-">SetColor( FG="", BG="" )</a></li>
 <li><a href="#setfgcolor-c-">SetFgColor( c )</a></li>
 <li><a href="#setbgcolor-c-">SetBgColor( c )</a></li>
+<li><a href="#setcolorpos-c-x-y-">SetColorPos( c, x, y )</a></li>
 <li><a href="#getcolor-byref-fgcolor-byref-bgcolor-">GetColor( ByRef FgColor="", ByRef BgColor="" )</a></li>
 <li><a href="#getfgcolor">GetFgColor()</a></li>
 <li><a href="#getbgcolor">GetBgColor()</a></li>
+<li><a href="#getcolorpos-x-y-">GetColorPos( x, y )</a></li>
 <li><a href="#printcolortable">PrintColorTable()</a></li>
 <li><a href="#fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten-">FillConsoleOutputAttribute( wAttribute, nLength, x, y, ByRef lpNumberOfAttrsWritten="" )</a></li>
 <li><a href="#readconsoleoutputattribute-byref-lpattribute-nlength-x-y-byref-lpnumberofattrsread-">ReadConsoleOutputAttribute( ByRef lpAttribute, nLength, x, y, ByRef lpNumberOfAttrsRead="" )</a></li>
 </ul>
 </li>
-<li>Size, Position &amp; Text<ul>
+<li>Size<ul>
 <li><a href="#getfontsize-byref-fontwidth-byref-fontheight-">GetFontSize( Byref fontwidth, ByRef fontheight )</a></li>
 <li><a href="#getfontwidth">GetFontWidth()</a></li>
 <li><a href="#getfontheight">GetFontHeight()</a></li>
@@ -63,20 +78,24 @@
 <li><a href="#getconsolewidth">GetConsoleWidth()</a></li>
 <li><a href="#getconsoleheight">GetConsoleHeight()</a></li>
 <li><a href="#setconsolesize-width-height-sizeheight0-">SetConsoleSize( width, height, SizeHeight=0 )</a></li>
+<li><a href="#setconsolewidth-w-">SetConsoleWidth( w )</a></li>
+<li><a href="#setconsoleheight-h-">SetConsoleHeight( h )</a></li>
 <li><a href="#getconsoleclientsize-byref-width-byref-height-">GetConsoleClientSize( ByRef width, ByRef height )</a></li>
 <li><a href="#getconsoleclientwidth">GetConsoleClientWidth()</a></li>
 <li><a href="#getconsoleclientheight">GetConsoleClientHeight()</a></li>
+</ul>
+</li>
+<li>Cursor<ul>
 <li><a href="#getconsolecursorposition-byref-x-byref-y-">GetConsoleCursorPosition( ByRef x, ByRef y )</a></li>
 <li><a href="#setconsolecursorposition-x-y-">SetConsoleCursorPosition( x="", y="" )</a></li>
 <li><a href="#setconsolecursorinfo-size-shown-">SetConsoleCursorInfo( Size="", Shown="" )</a></li>
 <li><a href="#getconsolecursorinfo-byref-size-byref-shown-">GetConsoleCursorInfo( ByRef Size="", ByRef Shown="" )</a></li>
+</ul>
+</li>
+<li>Other<ul>
 <li><a href="#getconsoleoriginaltitle-byref-title-">GetConsoleOriginalTitle( byRef Title )</a></li>
 <li><a href="#getconsoletitle-byref-title-">GetConsoleTitle( byRef Title )</a></li>
 <li><a href="#setconsoletitle-title-">SetConsoleTitle( title="" )</a></li>
-<li><a href="#setconsoleinputcp-codepage-">SetConsoleInputCP( codepage )</a></li>
-<li><a href="#getconsoleinputcp">GetConsoleInputCP()</a></li>
-<li><a href="#setconsoleoutputcp-codepage-">SetConsoleOutputCP( codepage )</a></li>
-<li><a href="#getconsoleoutputcp">GetConsoleOutputCP()</a></li>
 <li><a href="#setconsolemode-mode-">SetConsoleMode( Mode )</a></li>
 <li><a href="#getconsolemode-byref-mode-">GetConsoleMode( ByRef Mode )</a></li>
 </ul>
@@ -99,7 +118,6 @@
 </ul>
 <p><a id="library-functions"></a></p>
 <h2 id="library-functions">Library Functions</h2>
-<hr />
 <p><a id="smartstartconsole"></a></p>
 <h4 id="smartstartconsole"><strong><em>SmartStartConsole()</em></strong></h4>
 <hr />
@@ -160,7 +178,7 @@
              Default: Prints an empty new line.
              Fallback Method: Unicode Support not guaranteed
       Input: The String to be printed
-     Output: None
+     Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
 <p><a id="print-string-"></a></p>
@@ -171,7 +189,7 @@
              Default: Prints Nothing. 'Flushes' Stdout.
              Fallback Method: Unicode Support not guaranteed
       Input: The String to be printed
-     Output: None
+     Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
 <p><a id="printf-msg-vargs-"></a></p>
@@ -184,7 +202,7 @@
              can be treated as a string.
              Default: Prints Nothing. 'Flushes' Stdout. (Same behaviour as 'print()'
       Input: The 'format' String to be printed
-     Output: None
+     Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
 <p><a id="putsf-msg-vargs-"></a></p>
@@ -195,7 +213,7 @@
              execept without a new line.
              Default: Prints a new line. (Same behaviour as 'puts()')
       Input: The String to be printed
-     Output: None
+     Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
 <p><a id="gets-byref-var-"></a></p>
@@ -228,7 +246,7 @@
    Synonyms: 'cls()' and 'Clear()'
    MSDN URL: http://msdn.microsoft.com/library/ms682022
       Input: None
-     Output: None
+     Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
 <p><a id="fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten-"></a></p>
@@ -244,7 +262,7 @@
                           the character coordinates of the first cell to which the
                           character is to be written.
              y          - The y coordinate of the COORD structure.
-             lpNumberOfCharsWritten - The Varible in which to store the number characters
+             lpNumberOfCharsWritten - The Varible in which to store the number of characters
                                       to the console screen buffer.
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
@@ -275,13 +293,48 @@
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
-<p><a id="getcurrentdirectory"></a></p>
-<h4 id="getcurrentdirectory"><strong><em>GetCurrentDirectory()</em></strong></h4>
+<p><a id="setconsoleinputcp-codepage-"></a></p>
+<h4 id="setconsoleinputcp-codepage"><strong><em>SetConsoleInputCP( codepage )</em></strong></h4>
 <hr />
-<pre><code>Description: Retrieves the current working directory for the current process.
-   MSDN URL: http://msdn.microsoft.com/library/aa364934
-      Input: None  
-     Output: The Current working directory (Absolute Path). (String)
+<pre><code>Description: Sets the input code page used by the console. A console uses its
+             input code page to translate keyboard input into the corresponding
+             character value.
+   MSDN URL: http://msdn.microsoft.com/library/ms686013
+      Input: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="getconsoleinputcp"></a></p>
+<h4 id="getconsoleinputcp"><strong><em>GetConsoleInputCP()</em></strong></h4>
+<hr />
+<pre><code>Description: Retrieves the input code page used by the console. A console uses its
+             input code page to translate keyboard input into the corresponding
+             character value.
+   MSDN URL: http://msdn.microsoft.com/library/ms683162
+      Input: None
+     Output: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
+</code></pre>
+
+<p><a id="setconsoleoutputcp-codepage-"></a></p>
+<h4 id="setconsoleoutputcp-codepage"><strong><em>SetConsoleOutputCP( codepage )</em></strong></h4>
+<hr />
+<pre><code>Description: Sets the output code page used by the console. A console uses its
+             output code page to translate the character values written by the
+             various output functions into the images displayed in the console window.
+   MSDN URL: http://msdn.microsoft.com/library/ms686036
+      Input: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="getconsoleoutputcp"></a></p>
+<h4 id="getconsoleoutputcp"><strong><em>GetConsoleOutputCP()</em></strong></h4>
+<hr />
+<pre><code>Description: Retrieves the output code page used by the console. A console uses its
+             output code page to translate the character values written by the 
+             various output functions into the images displayed in the console window.
+   MSDN URL: http://msdn.microsoft.com/library/ms683169
+      Input: None
+     Output: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
 </code></pre>
 
 <p><a id="setcurrentdirectory-dir-"></a></p>
@@ -292,6 +345,15 @@
       Input: dir - The path to the new current working directory.
                    Note: Absolute, Relative, Drives and UNC Path are all accepted.
      Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="getcurrentdirectory"></a></p>
+<h4 id="getcurrentdirectory"><strong><em>GetCurrentDirectory()</em></strong></h4>
+<hr />
+<pre><code>Description: Retrieves the current working directory for the current process.
+   MSDN URL: http://msdn.microsoft.com/library/aa364934
+      Input: None  
+     Output: The Current working directory (Absolute Path). (String)
 </code></pre>
 
 <p><a id="setcolor-fg-bg-"></a></p>
@@ -311,7 +373,8 @@
 <p><a id="setfgcolor-c-"></a></p>
 <h4 id="setfgcolor-c"><strong><em>SetFgColor( c )</em></strong></h4>
 <hr />
-<pre><code>Description: Synonym for 'setColor(FG)' - see 'setColor()' for details.
+<pre><code>Description: Sets the Foreground color.
+             Shorthand for setColor()
       Input: FG (Foreground) - Set the Foreground color (Hexadecimal Value)
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
@@ -319,8 +382,21 @@
 <p><a id="setbgcolor-c-"></a></p>
 <h4 id="setbgcolor-c"><strong><em>SetBgColor( c )</em></strong></h4>
 <hr />
-<pre><code>Description: Synonym for 'setColor(&quot;&quot;,BG)' - see 'setColor()' for details.
+<pre><code>Description: Sets the Background color.
+             Shorthand for setColor()
       Input: BG (Background) - Set the Background color (Hexadecimal Value)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="setcolorpos-c-x-y-"></a></p>
+<h4 id="setcolorpos-c-x-y"><strong><em>SetColorPos( c, x, y )</em></strong></h4>
+<hr />
+<pre><code>Description: Sets the color at the specified cursor position.
+             Meant to be used with GetColorPos()
+             Shorthand for FillConsoleOutputAttribute()
+      Input: c - A color value returned by GetColorPos()
+             x - The desired Cursor's x pos. (Number)
+             y - The desired Cursor's y pos. (Number)
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
@@ -354,6 +430,17 @@
              See 'Console Color Constants' for all possible color values.
       Input: None
      Output: Success is Non-Zero, Failure is Undefined
+</code></pre>
+
+<p><a id="getcolorpos-x-y-"></a></p>
+<h4 id="getcolorpos-x-y"><strong><em>GetColorPos( x, y )</em></strong></h4>
+<hr />
+<pre><code>Description: Gets the color at the specified cursor position.
+             Meant to be used with SetColorPos()
+             Shorthand for ReadConsoleOutputAttribute()
+      Input: x - The desired Cursor's x pos. (Number)
+             y - The desired Cursor's y pos. (Number)
+     Output: The color value to be used with SetColorPos()
 </code></pre>
 
 <p><a id="printcolortable"></a></p>
@@ -467,6 +554,22 @@
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
+<p><a id="setconsolewidth-w-"></a></p>
+<h4 id="setconsolewidth-w"><strong><em>SetConsoleWidth( w )</em></strong></h4>
+<hr />
+<pre><code>Description: Shorthand for 'SetConsoleSize()'. Set the Console's buffer's Width.
+      Input: w - The buffer's Width (Number)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
+<p><a id="setconsoleheight-h-"></a></p>
+<h4 id="setconsoleheight-h"><strong><em>SetConsoleHeight( h )</em></strong></h4>
+<hr />
+<pre><code>Description: Shorthand for 'SetConsoleSize()'. Set the Console's buffer's Height.
+      Input: h - The buffer's Height (Number)
+     Output: Success is Non-Zero, Failure is Zero
+</code></pre>
+
 <p><a id="getconsoleclientsize-byref-width-byref-height-"></a></p>
 <h4 id="getconsoleclientsize-byref-width-byref-height"><strong><em>GetConsoleClientSize( ByRef width, ByRef height )</em></strong></h4>
 <hr />
@@ -564,50 +667,6 @@
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
-<p><a id="setconsoleinputcp-codepage-"></a></p>
-<h4 id="setconsoleinputcp-codepage"><strong><em>SetConsoleInputCP( codepage )</em></strong></h4>
-<hr />
-<pre><code>Description: Sets the input code page used by the console. A console uses its
-             input code page to translate keyboard input into the corresponding
-             character value.
-   MSDN URL: http://msdn.microsoft.com/library/ms686013
-      Input: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
-     Output: Success is Non-Zero, Failure is Zero
-</code></pre>
-
-<p><a id="getconsoleinputcp"></a></p>
-<h4 id="getconsoleinputcp"><strong><em>GetConsoleInputCP()</em></strong></h4>
-<hr />
-<pre><code>Description: Retrieves the input code page used by the console. A console uses its
-             input code page to translate keyboard input into the corresponding
-             character value.
-   MSDN URL: http://msdn.microsoft.com/library/ms683162
-      Input: None
-     Output: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
-</code></pre>
-
-<p><a id="setconsoleoutputcp-codepage-"></a></p>
-<h4 id="setconsoleoutputcp-codepage"><strong><em>SetConsoleOutputCP( codepage )</em></strong></h4>
-<hr />
-<pre><code>Description: Sets the output code page used by the console. A console uses its
-             output code page to translate the character values written by the
-             various output functions into the images displayed in the console window.
-   MSDN URL: http://msdn.microsoft.com/library/ms686036
-      Input: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
-     Output: Success is Non-Zero, Failure is Zero
-</code></pre>
-
-<p><a id="getconsoleoutputcp"></a></p>
-<h4 id="getconsoleoutputcp"><strong><em>GetConsoleOutputCP()</em></strong></h4>
-<hr />
-<pre><code>Description: Retrieves the output code page used by the console. A console uses its
-             output code page to translate the character values written by the 
-             various output functions into the images displayed in the console window.
-   MSDN URL: http://msdn.microsoft.com/library/ms683169
-      Input: None
-     Output: codepage - (Number) see &quot;Code Page Identifiers&quot; : http://msdn.microsoft.com/library/dd317756
-</code></pre>
-
 <p><a id="setconsolemode-mode-"></a></p>
 <h4 id="setconsolemode-mode"><strong><em>SetConsoleMode( Mode )</em></strong></h4>
 <hr />
@@ -689,7 +748,7 @@
 <hr />
 <pre><code>Description: Converts a decimal value to a hexadecimal value.
       Input: The Decimal value to be converted (Number) (Optional)
-     Output: The convert value Hexadecimal value (Number)
+     Output: The converted Hexadecimal value (Number)
 </code></pre>
 
 <p><a id="tobase-n-b-"></a></p>
@@ -725,7 +784,6 @@
 
 <p><a id="global-vars"></a></p>
 <h2 id="global-vars">Global Vars</h2>
-<hr />
 <p><a id="defaults"></a></p>
 <h3 id="defaults">Defaults</h3>
 <hr />
@@ -738,7 +796,7 @@ SetBatchLines,-1
 <h3 id="predefined-variables-objects">Predefined Variables &amp; Objects</h3>
 <hr />
 <p><strong><em>LibConVersion</em></strong> is a string that is set to the current version of LibCon used.<br />
-<em>Definition (example):</em> <code>LibConVersion := "1.0.4.1" ;Library Version</code></p>
+<em>Definition (example):</em> <code>LibConVersion := "1.0.4.2" ;Library Version</code></p>
 <p><strong><em>LibConDebug</em></strong> is either set 1 (true) or 0 (false) to enable/disable LibConDebug Mode.<br />
 <em>Definition (default):</em> <code>LibConDebug := 0 ;Enable/Disable DebugMode</code></p>
 <p><strong><em>LibConErrorLevel</em></strong> is a variable that is used internally for LibConDebug Mode.<br />
@@ -746,7 +804,7 @@ SetBatchLines,-1
 <p><strong><em>sType</em></strong> is an Object that is used when coding with structures and DllCalls.<br />
 It contains a few type sizes (Bytes). See "<a href="http://msdn.microsoft.com/library/aa383751">Windows Data Types</a>" : http://msdn.microsoft.com/library/aa383751<br />
 <em>Definition:</em><br />
-<code>sType := Object("SHORT", 2, "COORD", 4, "WORD", 2, "SMALL_RECT", 8, "DWORD", 4, "LONG", 4)</code></p>
+<code>sType := Object("SHORT", 2, "COORD", 4, "WORD", 2, "SMALL_RECT", 8, "DWORD", 4, "LONG", 4, "BOOL", 4, "RECT", 16, "CHAR", 1)</code></p>
 <p><strong><em>Stdin</em></strong> is an Object that is used to reference the currently attached console's Input buffer.<br />
 <em>Definition:</em> <code>Stdin := FileOpen(DllCall("GetStdHandle", "int", -10, "ptr"), "h `n")</code></p>
 <p><strong><em>Stdout</em></strong> is an Object that is used to reference the currently attached console's Output buffer.<br />
