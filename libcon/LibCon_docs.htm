@@ -9,8 +9,10 @@
 	<area shape="poly" coords="15,0,57,0,149,92,149,134" alt="ForkMe" href="https://github.com/joedf/LibCon.ahk">
 	</map>
 </div>
-<h1 id="libcon-documentation">LibCon : Documentation</h1>
-<h2 id="table-of-contents">Table of Contents</h2>
+<h1 id="libcon-documentation"><a name="user-content-libcon-documentation" href="#libcon-documentation" class="headeranchor-link"  aria-hidden="true">
+<span class="headeranchor"></span></a>LibCon : Documentation</h1>
+<h2 id="table-of-contents"><a name="user-content-table-of-contents" href="#table-of-contents" class="headeranchor-link"  aria-hidden="true">
+<span class="headeranchor"></span></a>Table of Contents</h2>
 <ul>
 <li><a href="#global-vars">Library Global Variables</a><ul>
 <li><a href="#defaults">Defaults</a></li>
@@ -29,16 +31,17 @@
 <li>Input and Output Functions<ul>
 <li>User Interface<ul>
 <li><a href="#newline-x1-">NewLine( x=1 )</a></li>
-<li><a href="#puts-string-">Puts( string="" )</a></li>
-<li><a href="#print-string-">Print( string="" )</a></li>
+<li><a href="#puts-string-">Puts( string=&rdquo;&rdquo; )</a></li>
+<li><a href="#print-string-">Print( string=&rdquo;&rdquo; )</a></li>
 <li><a href="#printf-msg-vargs-">Printf( msg, vargs* )</a></li>
 <li><a href="#putsf-msg-vargs-">Putsf( msg, vargs* )</a></li>
-<li><a href="#gets-byref-var-">Gets( ByRef var="" )</a></li>
+<li><a href="#gets-byref-var-">Gets( ByRef var=&rdquo;&rdquo; )</a></li>
 <li><a href="#getch-byref-keyname-">Getch( ByRef keyname )</a></li>
 <li><a href="#readconsoleinput">ReadConsoleInput()</a></li>
 <li><a href="#clearscreen">ClearScreen()</a></li>
-<li><a href="#fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten-">FillConsoleOutputCharacter( cCharacter, nLength, x, y, ByRef lpNumberOfCharsWritten="" )</a></li>
-<li><a href="#readconsoleoutputcharacter-byref-lpcharacter-nlength-x-y-byref-lpnumberofcharsread-">ReadConsoleOutputCharacter( ByRef lpCharacter, nLength, x, y, ByRef lpNumberOfCharsRead="" )</a></li>
+<li><a href="#fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten-">FillConsoleOutputCharacter( cCharacter, nLength, x, y, ByRef lpNumberOfCharsWritten=&rdquo;&rdquo; )</a></li>
+<li><a href="#readconsoleoutput-x-y-w-h-">ReadConsoleOutput( x, y, w, h )</a></li>
+<li><a href="#readconsoleoutputcharacter-x-y-">ReadConsoleOutputCharacter( x, y )</a></li>
 </ul>
 </li>
 <li>File I/O<ul>
@@ -58,17 +61,17 @@
 </li>
 <li>Console Properties &amp; Settings<ul>
 <li>Color Functions<ul>
-<li><a href="#setcolor-fg-bg-">SetColor( FG="", BG="" )</a></li>
+<li><a href="#setcolor-fg-bg-">SetColor( FG=&rdquo;&ldquo;, BG=&rdquo;&rdquo; )</a></li>
 <li><a href="#setfgcolor-c-">SetFgColor( c )</a></li>
 <li><a href="#setbgcolor-c-">SetBgColor( c )</a></li>
 <li><a href="#setcolorpos-c-x-y-">SetColorPos( c, x, y )</a></li>
-<li><a href="#getcolor-byref-fgcolor-byref-bgcolor-">GetColor( ByRef FgColor="", ByRef BgColor="" )</a></li>
+<li><a href="#getcolor-byref-fgcolor-byref-bgcolor-">GetColor( ByRef FgColor=&rdquo;&ldquo;, ByRef BgColor=&rdquo;&rdquo; )</a></li>
 <li><a href="#getfgcolor">GetFgColor()</a></li>
 <li><a href="#getbgcolor">GetBgColor()</a></li>
 <li><a href="#getcolorpos-x-y-">GetColorPos( x, y )</a></li>
 <li><a href="#printcolortable">PrintColorTable()</a></li>
-<li><a href="#fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten-">FillConsoleOutputAttribute( wAttribute, nLength, x, y, ByRef lpNumberOfAttrsWritten="" )</a></li>
-<li><a href="#readconsoleoutputattribute-byref-lpattribute-nlength-x-y-byref-lpnumberofattrsread-">ReadConsoleOutputAttribute( ByRef lpAttribute, nLength, x, y, ByRef lpNumberOfAttrsRead="" )</a></li>
+<li><a href="#fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten-">FillConsoleOutputAttribute( wAttribute, nLength, x, y, ByRef lpNumberOfAttrsWritten=&rdquo;&rdquo; )</a></li>
+<li><a href="#readconsoleoutputattribute-byref-lpattribute-nlength-x-y-byref-lpnumberofattrsread-">ReadConsoleOutputAttribute( ByRef lpAttribute, nLength, x, y, ByRef lpNumberOfAttrsRead=&rdquo;&rdquo; )</a></li>
 </ul>
 </li>
 <li>Size<ul>
@@ -88,15 +91,15 @@
 </li>
 <li>Cursor<ul>
 <li><a href="#getconsolecursorposition-byref-x-byref-y-">GetConsoleCursorPosition( ByRef x, ByRef y )</a></li>
-<li><a href="#setconsolecursorposition-x-y-">SetConsoleCursorPosition( x="", y="" )</a></li>
-<li><a href="#setconsolecursorinfo-size-shown-">SetConsoleCursorInfo( Size="", Shown="" )</a></li>
-<li><a href="#getconsolecursorinfo-byref-size-byref-shown-">GetConsoleCursorInfo( ByRef Size="", ByRef Shown="" )</a></li>
+<li><a href="#setconsolecursorposition-x-y-">SetConsoleCursorPosition( x=&rdquo;&ldquo;, y=&rdquo;&rdquo; )</a></li>
+<li><a href="#setconsolecursorinfo-size-shown-">SetConsoleCursorInfo( Size=&rdquo;&ldquo;, Shown=&rdquo;&rdquo; )</a></li>
+<li><a href="#getconsolecursorinfo-byref-size-byref-shown-">GetConsoleCursorInfo( ByRef Size=&rdquo;&ldquo;, ByRef Shown=&rdquo;&rdquo; )</a></li>
 </ul>
 </li>
 <li>Other<ul>
 <li><a href="#getconsoleoriginaltitle-byref-title-">GetConsoleOriginalTitle( byRef Title )</a></li>
 <li><a href="#getconsoletitle-byref-title-">GetConsoleTitle( byRef Title )</a></li>
-<li><a href="#setconsoletitle-title-">SetConsoleTitle( title="" )</a></li>
+<li><a href="#setconsoletitle-title-">SetConsoleTitle( title=&rdquo;&rdquo; )</a></li>
 <li><a href="#setconsolemode-mode-">SetConsoleMode( Mode )</a></li>
 <li><a href="#getconsolemode-byref-mode-">GetConsoleMode( ByRef Mode )</a></li>
 </ul>
@@ -105,18 +108,18 @@
 </li>
 <li>Miscellaneous Functions<ul>
 <li><a href="#getconsolehandle">GetConsoleHandle()</a></li>
-<li><a href="#libconerror-fname-byref-arg1-byref-arg2-arg3-arg4-byref-arg5-">LibConError( fname:="", ByRef arg1:="", ByRef arg2:="", arg3:="", arg4:="", ByRef arg5:="" )</a></li>
+<li><a href="#libconerror-fname-byref-arg1-byref-arg2-arg3-arg4-byref-arg5-">LibConError( fname:=&rdquo;&ldquo;, ByRef arg1:=&rdquo;&ldquo;, ByRef arg2:=&rdquo;&ldquo;, arg3:=&rdquo;&ldquo;, arg4:=&rdquo;&ldquo;, ByRef arg5:=&rdquo;&rdquo; )</a></li>
 <li><a href="#wait-timeout0-">Wait( timeout=0 )</a></li>
 <li><a href="#pause-show1-">Pause( show=1 )</a></li>
 <li><a href="#dec2hex-var-">Dec2Hex( var )</a></li>
 <li><a href="#tobase-n-b-">ToBase( n, b )</a></li>
-<li><a href="#sprogressbar-length-current-max-unlock--0-fixed1-lp-lba-lbb-">sProgressBar( Length, Current, Max, Unlock = 0, fixed=1, lp="|", lba="[", lbb="]" )</a></li>
+<li><a href="#sprogressbar-length-current-max-unlock--0-fixed1-lp-lba-lbb-">sProgressBar( Length, Current, Max, Unlock = 0, fixed=1, lp=&rdquo;|&rdquo;, lba=&rdquo;[&ldquo;, lbb=&rdquo;]&rdquo; )</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="library-functions">Library Functions</h2>
+<h2 id="library-functions"><a name="user-content-library-functions" href="#library-functions" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Library Functions</h2>
 <p><a id="smartstartconsole"></a></p>
 <h4 id="smartstartconsole"><strong><em>SmartStartConsole()</em></strong></h4>
 <hr />
@@ -171,7 +174,7 @@
 </code></pre>
 
 <p><a id="puts-string-"></a></p>
-<h4 id="puts-string"><strong><em>Puts( string="" )</em></strong></h4>
+<h4 id="puts-string"><strong><em>Puts( string=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Prints a String with a new line. (has Unicode Support)
              Default: Prints an empty new line.
@@ -181,7 +184,7 @@
 </code></pre>
 
 <p><a id="print-string-"></a></p>
-<h4 id="print-string"><strong><em>Print( string="" )</em></strong></h4>
+<h4 id="print-string"><strong><em>Print( string=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Prints a String without a new line. Same as 'puts()' except
              without a new line. (has Unicode Support)
@@ -216,7 +219,7 @@
 </code></pre>
 
 <p><a id="gets-byref-var-"></a></p>
-<h4 id="gets-byref-var"><strong><em>Gets( ByRef var="" )</em></strong></h4>
+<h4 id="gets-byref-var"><strong><em>Gets( ByRef var=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Gets/Obtains input from the console user, until a carriage return '`r'
              has been received. The carriage return is trimmed off (not recorded).
@@ -262,7 +265,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten-"></a></p>
-<h4 id="fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten"><strong><em>FillConsoleOutputCharacter( cCharacter, nLength, x, y, ByRef lpNumberOfCharsWritten="" )</em></strong></h4>
+<h4 id="fillconsoleoutputcharacter-ccharacter-nlength-x-y-byref-lpnumberofcharswritten"><strong><em>FillConsoleOutputCharacter( cCharacter, nLength, x, y, ByRef lpNumberOfCharsWritten=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Writes a character to the console screen buffer a specified number of times,
              beginning at the specified coordinates.
@@ -279,20 +282,26 @@ Event types: http://msdn.microsoft.com/library/ms683499
      Output: Success is Non-Zero, Failure is Zero
 </code></pre>
 
-<p><a id="readconsoleoutputcharacter-byref-lpcharacter-nlength-x-y-byref-lpnumberofcharsread-"></a></p>
-<h4 id="readconsoleoutputcharacter-byref-lpcharacter-nlength-x-y-byref-lpnumberofcharsread"><strong><em>ReadConsoleOutputCharacter( ByRef lpCharacter, nLength, x, y, ByRef lpNumberOfCharsRead="" )</em></strong></h4>
+<p><a id="readconsoleoutput-x-y-w-h-"></a></p>
+<h4 id="readconsoleoutput-x-y-w-h"><strong><em>ReadConsoleOutput( x, y, w, h )</em></strong></h4>
 <hr />
-<pre><code>Description: Reads a number of characters from consecutive cells of a console screen buffer,
-             beginning at a specified location.
+<pre><code>Description: Reads a number of characters located in a specified rectangle.
+   MSDN URL: http://msdn.microsoft.com/library/ms684965
+      Input: x           - The x coordinate of upper left corner of the rectangle.
+             y           - The x coordinate of upper left corner of the rectangle.
+             w           - The width of the rectangle.
+             w           - The height of the rectangle.
+     Output: On failure, an empty string is returned.
+</code></pre>
+
+<p><a id="readconsoleoutputcharacter-x-y-"></a></p>
+<h4 id="readconsoleoutputcharacter-x-y"><strong><em>ReadConsoleOutputCharacter( x, y )</em></strong></h4>
+<hr />
+<pre><code>Description: Reads a single character from the specified coordinates of a console screen buffer.
    MSDN URL: http://msdn.microsoft.com/library/ms684969
-      Input: lpCharacter - The variable in which to store the characters read from the
-                           console screen buffer.
-             nLength     - The number of character cells to be read.
-             x           - The x coordinate of the COORD structure that specifies the
-                           character coordinates of the first cell from which to read.
-             y           - The y coordinate of the COORD structure.
-             lpNumberOfCharsRead - The Varible in which to store the number characters read.
-     Output: Success is Non-Zero, Failure is Zero
+      Input: x           - The x coordinate of the character to read.
+             y           - The y coordinate of the character to read.
+     Output: On failure, an empty string is returned.
 </code></pre>
 
 <p><a id="flushinput"></a></p>
@@ -369,7 +378,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="setcolor-fg-bg-"></a></p>
-<h4 id="setcolor-fg-bg"><strong><em>SetColor( FG="", BG="" )</em></strong></h4>
+<h4 id="setcolor-fg-bg"><strong><em>SetColor( FG=&rdquo;&ldquo;, BG=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Sets the Current Console's Foreground and Background Colors.
              (A.K.A. Text color and Text Background color)
@@ -413,7 +422,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="getcolor-byref-fgcolor-byref-bgcolor-"></a></p>
-<h4 id="getcolor-byref-fgcolor-byref-bgcolor"><strong><em>GetColor( ByRef FgColor="", ByRef BgColor="" )</em></strong></h4>
+<h4 id="getcolor-byref-fgcolor-byref-bgcolor"><strong><em>GetColor( ByRef FgColor=&rdquo;&ldquo;, ByRef BgColor=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Returns the current color (Hexadecimal Value)
              Note: The color returned is both the background and foreground
@@ -465,7 +474,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten-"></a></p>
-<h4 id="fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten"><strong><em>FillConsoleOutputAttribute( wAttribute, nLength, x, y, ByRef lpNumberOfAttrsWritten="" )</em></strong></h4>
+<h4 id="fillconsoleoutputattribute-wattribute-nlength-x-y-byref-lpnumberofattrswritten"><strong><em>FillConsoleOutputAttribute( wAttribute, nLength, x, y, ByRef lpNumberOfAttrsWritten=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Sets the character attributes for a specified number of character cells,
              beginning at the specified coordinates in a screen buffer.
@@ -483,7 +492,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="readconsoleoutputattribute-byref-lpattribute-nlength-x-y-byref-lpnumberofattrsread-"></a></p>
-<h4 id="readconsoleoutputattribute-byref-lpattribute-nlength-x-y-byref-lpnumberofattrsread"><strong><em>ReadConsoleOutputAttribute( ByRef lpAttribute, nLength, x, y, ByRef lpNumberOfAttrsRead="" )</em></strong></h4>
+<h4 id="readconsoleoutputattribute-byref-lpattribute-nlength-x-y-byref-lpnumberofattrsread"><strong><em>ReadConsoleOutputAttribute( ByRef lpAttribute, nLength, x, y, ByRef lpNumberOfAttrsRead=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Gets the character attributes for a specified number of character cells,
              beginning at the specified coordinates in a screen buffer.
@@ -619,7 +628,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="setconsolecursorposition-x-y-"></a></p>
-<h4 id="setconsolecursorposition-x-y"><strong><em>SetConsoleCursorPosition( x="", y="" )</em></strong></h4>
+<h4 id="setconsolecursorposition-x-y"><strong><em>SetConsoleCursorPosition( x=&rdquo;&ldquo;, y=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Sets the cursor position.
        Note: The origin is (0,0)
@@ -630,7 +639,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="setconsolecursorinfo-size-shown-"></a></p>
-<h4 id="setconsolecursorinfo-size-shown"><strong><em>SetConsoleCursorInfo( Size="", Shown="" )</em></strong></h4>
+<h4 id="setconsolecursorinfo-size-shown"><strong><em>SetConsoleCursorInfo( Size=&rdquo;&ldquo;, Shown=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Sets the cursor height (size) and visibility.
    MSDN URL: http://msdn.microsoft.com/library/ms686019
@@ -642,7 +651,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="getconsolecursorinfo-byref-size-byref-shown-"></a></p>
-<h4 id="getconsolecursorinfo-byref-size-byref-shown"><strong><em>GetConsoleCursorInfo( ByRef Size="", ByRef Shown="" )</em></strong></h4>
+<h4 id="getconsolecursorinfo-byref-size-byref-shown"><strong><em>GetConsoleCursorInfo( ByRef Size=&rdquo;&ldquo;, ByRef Shown=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Gets the cursor height (size) and visibility.
    MSDN URL: http://msdn.microsoft.com/library/ms683163
@@ -671,7 +680,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="setconsoletitle-title-"></a></p>
-<h4 id="setconsoletitle-title"><strong><em>SetConsoleTitle( title="" )</em></strong></h4>
+<h4 id="setconsoletitle-title"><strong><em>SetConsoleTitle( title=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Sets the title for the current console window.
    MSDN URL: http://msdn.microsoft.com/library/ms686050
@@ -709,7 +718,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="libconerror-fname-byref-arg1-byref-arg2-arg3-arg4-byref-arg5-"></a></p>
-<h4 id="libconerror-fname-byref-arg1-byref-arg2-arg3-arg4-byref-arg5"><strong><em>LibConError( fname:="", ByRef arg1:="", ByRef arg2:="", arg3:="", arg4:="", ByRef arg5:="" )</em></strong></h4>
+<h4 id="libconerror-fname-byref-arg1-byref-arg2-arg3-arg4-byref-arg5"><strong><em>LibConError( fname:=&rdquo;&ldquo;, ByRef arg1:=&rdquo;&ldquo;, ByRef arg2:=&rdquo;&ldquo;, arg3:=&rdquo;&ldquo;, arg4:=&rdquo;&ldquo;, ByRef arg5:=&rdquo;&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Explicit Error Handling towards the user. Msgboxes for Errors (DebugMode Only)
              (Abort, Retry, Ignore). See source for usage... Used for Basic ErrorHandling.
@@ -762,7 +771,7 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="sprogressbar-length-current-max-unlock--0-fixed1-lp-lba-lbb-"></a></p>
-<h4 id="sprogressbar-length-current-max-unlock-0-fixed1-lp-lba-lbb"><strong><em>sProgressBar( Length, Current, Max, Unlock = 0, fixed=1, lp="|", lba="[", lbb="]" )</em></strong></h4>
+<h4 id="sprogressbar-length-current-max-unlock-0-fixed1-lp-lba-lbb"><strong><em>sProgressBar( Length, Current, Max, Unlock = 0, fixed=1, lp=&rdquo;|&rdquo;, lba=&rdquo;[&ldquo;, lbb=&rdquo;]&rdquo; )</em></strong></h4>
 <hr />
 <pre><code>Description: Displays an 'ASCII' progress bar.
       Input: Length  - The total lenght of the progress bar (strlen)
@@ -783,9 +792,9 @@ Event types: http://msdn.microsoft.com/library/ms683499
 </code></pre>
 
 <p><a id="global-vars"></a></p>
-<h2 id="global-vars">Global Vars</h2>
+<h2 id="global-vars"><a name="user-content-global-vars" href="#global-vars" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Global Vars</h2>
 <p><a id="defaults"></a></p>
-<h3 id="defaults">Defaults</h3>
+<h3 id="defaults"><a name="user-content-defaults" href="#defaults" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Defaults</h3>
 <hr />
 <pre><code>SetKeyDelay, 0
 SetWinDelay, 0
@@ -793,34 +802,34 @@ SetBatchLines,-1
 </code></pre>
 
 <p><a id="predefined-variables--objects"></a></p>
-<h3 id="predefined-variables-objects">Predefined Variables &amp; Objects</h3>
+<h3 id="predefined-variables-objects"><a name="user-content-predefined-variables-objects" href="#predefined-variables-objects" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Predefined Variables &amp; Objects</h3>
 <hr />
 <p><strong><em>LibConVersion</em></strong> is a string that is set to the current version of LibCon used.<br />
-<em>Definition (example):</em> <code>LibConVersion := "1.0.5.0" ;Library Version</code></p>
+<em>Definition (example):</em> <code>LibConVersion := "1.0.6.1" ;Library Version</code></p>
 <p><strong><em>LibConDebug</em></strong> is either set 1 (true) or 0 (false) to enable/disable LibConDebug Mode.<br />
 <em>Definition (default):</em> <code>LibConDebug := 0 ;Enable/Disable DebugMode</code></p>
 <p><strong><em>LibConErrorLevel</em></strong> is a variable that is used internally for LibConDebug Mode.<br />
 <em>Definition:</em> <code>LibConErrorLevel := 0 ;Used For DebugMode</code></p>
 <p><strong><em>sType</em></strong> is an Object that is used when coding with structures and DllCalls.<br />
-It contains a few type sizes (Bytes). See "<a href="http://msdn.microsoft.com/library/aa383751">Windows Data Types</a>" : http://msdn.microsoft.com/library/aa383751<br />
+It contains a few type sizes (Bytes). See &ldquo;<a href="http://msdn.microsoft.com/library/aa383751">Windows Data Types</a>&rdquo; : <a href="http://msdn.microsoft.com/library/aa383751">http://msdn.microsoft.com/library/aa383751</a><br />
 <em>Definition:</em><br />
 <code>sType := Object("SHORT", 2, "COORD", 4, "WORD", 2, "SMALL_RECT", 8, "DWORD", 4, "LONG", 4, "BOOL", 4, "RECT", 16, "CHAR", 1)</code></p>
-<p><strong><em>Stdin</em></strong> is an Object that is used to reference the currently attached console's Input buffer.<br />
+<p><strong><em>Stdin</em></strong> is an Object that is used to reference the currently attached console&rsquo;s Input buffer.<br />
 <em>Definition:</em> <code>Stdin := FileOpen(DllCall("GetStdHandle", "int", -10, "ptr"), "h `n")</code></p>
-<p><strong><em>Stdout</em></strong> is an Object that is used to reference the currently attached console's Output buffer.<br />
+<p><strong><em>Stdout</em></strong> is an Object that is used to reference the currently attached console&rsquo;s Output buffer.<br />
 <em>Definition:</em> <code>Stdout := FileOpen(DllCall("GetStdHandle", "int", -11, "ptr"), "h `n")</code></p>
 <p><strong><em>args</em></strong> is an Object that is used to reference the arguments the script has received.<br />
 The object is created only when the number of arguments is greater than zero.<br />
 Note: <code>if (args)</code> will return true, if the object exists, otherwise, it will return false.</p>
 <ul>
-<li><strong><em>args.CSV</em></strong> (or args["CSV"]) - Contains the arguments in <a href="http://en.wikipedia.org/w/index.php?title=Comma-separated_values&amp;oldid=574459319">CSV</a> format.</li>
-<li><strong><em>args[n]</em></strong> - where '<strong><em>n</em></strong>' (n&gt;0) is the <strong><em>n</em></strong>'th argument</li>
+<li><strong><em>args.CSV</em></strong> (or args[&ldquo;CSV&rdquo;]) - Contains the arguments in <a href="http://en.wikipedia.org/w/index.php?title=Comma-separated_values&amp;oldid=574459319">CSV</a> format.</li>
+<li><strong><em>args[n]</em></strong> - where &lsquo;<strong><em>n</em></strong>&lsquo; (n&gt;0) is the <strong><em>n</em></strong>&lsquo;th argument</li>
 <li><strong><em>args[0]</em></strong> - is equal to <strong><em>argc</em></strong></li>
 </ul>
 <p><strong><em>argc</em></strong> exists only if the args Object exists. It is set to the number of arguments received.<br />
 <em>Definition:</em> <code>argc=%0%</code></p>
 <p><a id="console-color-constants"></a></p>
-<h3 id="console-color-constants">Console Color Constants</h3>
+<h3 id="console-color-constants"><a name="user-content-console-color-constants" href="#console-color-constants" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Console Color Constants</h3>
 <hr />
 <pre><code class="AutoHotkey">Black:=0x0
 DarkBlue:=0x1
