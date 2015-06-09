@@ -34,6 +34,8 @@ function checkCookie() {
 
 function DayAndNight(autorun) {
 	var theme = getCookie("theme");
+	
+	var cookielife = 14;
 
 	var day_theme = "simplex2";
 	var night_theme = "cyborg2";
@@ -46,15 +48,23 @@ function DayAndNight(autorun) {
 			break;
 		}
 	}
-
-	var autobool = (theme.contains("night") && autorun);
-
-	if (autobool || stylesheet.href.contains(day_theme)) {
-		stylesheet.href = 'assets/strapdown/themes/'+night_theme+'.min.css';
-		setCookie("theme","night",14);
+	
+	if (autorun) {
+		if (theme.contains("night")) {
+			stylesheet.href = 'assets/strapdown/themes/'+night_theme+'.min.css';
+			setCookie("theme","night",cookielife);
+		} else {
+			stylesheet.href = 'assets/strapdown/themes/'+day_theme+'.min.css';
+			setCookie("theme","day",cookielife);
+		}
 	} else {
-		stylesheet.href = 'assets/strapdown/themes/'+day_theme+'.min.css';
-		setCookie("theme","day",14);
+		if (stylesheet.href.contains(day_theme)) {
+			stylesheet.href = 'assets/strapdown/themes/'+night_theme+'.min.css';
+			setCookie("theme","night",cookielife);
+		} else {
+			stylesheet.href = 'assets/strapdown/themes/'+day_theme+'.min.css';
+			setCookie("theme","day",cookielife);
+		}
 	}
 	
 	return;
