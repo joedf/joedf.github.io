@@ -33,6 +33,12 @@ blockquote p:last-child {
 	padding: 10px 20px !important;
 }
 
+ul.dropdown-menu
+{
+	overflow-y: auto;
+	max-height: 550px;
+}
+
 /*--------------------------------------------------------*/
 /* custom style for item/project boxes */
 .boxes {
