@@ -205,11 +205,14 @@
 		var haligh_css = '';
 		var mfixed_offset = (topbar_tag.hasAttribute('mfixed'))?50:0;
 		var iOS = /iPad|iPhone|iPod/.test(navigator.platform);
+		var mfx_bType = 'inline-block';
 		if (iOS) {
 			if (topbar_tag.hasAttribute('mfixed'))
 				mfixed_offset = 5;
-			else
+			else {
 				mfixed_offset = -45;
+				mfx_bType = 'inline';
+			}
 		}
 
 		// Prepare the css for better anchor alignment
@@ -221,7 +224,7 @@
 				var h_lh = parseInt(window.getComputedStyle(h_e,null).getPropertyValue('line-height'),10);
 				
 				haligh_css = haligh_css + '.h'+i+'_anchor{position:relative;display:inline-block;top:-'+(h_fs+7+(h_lh))+'px}';
-				haligh_css = haligh_css + '@media(max-width:979px){.h'+i+'_anchor{position:relative;display:inline-block;top:-'+(h_fs+7+mfixed_offset)+'px}}';
+				haligh_css = haligh_css + '@media(max-width:979px){.h'+i+'_anchor{position:relative;display:'+mfx_bType+';top:-'+(h_fs+7+mfixed_offset)+'px}}';
 
 				//alert('fs: '+h_fs+'\nlh: '+h_lh);
 			}
