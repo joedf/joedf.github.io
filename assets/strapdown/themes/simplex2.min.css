@@ -47,7 +47,7 @@ ul.dropdown-menu
 @media(min-width:980px){
 	.boxes table {
 		display: inline-block;
-		width: 33%;
+		max-width: 33%;
 	}
 	.boxes table tr td:nth-child(2) {
 		width: 100%;
