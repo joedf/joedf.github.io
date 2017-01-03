@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/joedf
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://joedf.ahkscript.org
+  * I am joedf (https://keybase.io/joedf) on keybase.
+  * I have a public key with fingerprint 2A59 37EE B92E 3F0C D736  0445 DA71 F180 C393 5E9D
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01014407efd62e19aba38bcfb5aac6e20a56b7d106a52b2005524d7c51a8c29710b50a",
+            "fingerprint": "2a5937eeb92e3f0cd7360445da71f180c3935e9d",
+            "host": "keybase.io",
+            "key_id": "da71f180c3935e9d",
+            "kid": "01014407efd62e19aba38bcfb5aac6e20a56b7d106a52b2005524d7c51a8c29710b50a",
+            "uid": "ee89819d797ad03d894ffe6dd62a4119",
+            "username": "joedf"
+        },
+        "service": {
+            "hostname": "joedf.ahkscript.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1483466542,
+    "expire_in": 157680000,
+    "prev": "1b0be5ceaf7ed17e46b36551fadb85ed603bf82fb59cda8eb5748934c3fcec70",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.61
+Comment: https://keybase.io/crypto
+
+yMNIAnicrZJrTBxVGIZ3oZSyLRcJKERUGLFcSrczO/cldam1bYqCTUrrWptuZuac
+gXG3e98tDQXaQIposbGlBLCwQGtK4gWrpWhoAgsoJRSVGiBSAxq5iLREKUFULs4Q
+TfzhT8+fk/Od933O+305PaGBKo161PHr6e6Lx+rU/f5aj8pontYWILwNnET0BYgZ
+rm/QAqDLbTJLANEjKIZiBIHSUASUDmIsx3M4wwsiT3KcQEEdypEUTwMMpThSx+tQ
+lCR1BKAFEuMYQcfSGMqTKIekIaJkzYVOu1OyumWsjiNZnIaQZ3UQF1EB0DiFEgQJ
+OBoTMQYVcBYnIQtkY57NpTjkcDznglrJJtfkg2k93n/o/+fcnnUchAzLYCygWZoD
+KA4YlhBFSAEZzhEYxipCF3RaueNQVr9mg0BECtMQueSVBKhMVWnj39daLs/sEpyS
+3a21OXNlv91pc9sEm0UW5Lnddr3id5+0K4YTkDf9jTLxkhXIo5QNXuh0STYrosdk
+peCWFDZGMDhBUSShS0Ngvl1yQpOkKEiaYlB5Kc9Ar4zEeJSHpAA5kYYAoyFB8ThF
+kpjIAZ4hIaBQnBcZnTwvVgAcA3mSJhgWJwRcFKBAo4jSnMNqQ/SEHJPLlZEuKdfK
+uT1OiBR2+Y9uUKk1qo1BAcoXU2lCIv75eLNi+CreGqI3XlhNOn0viB9+Z8Lzx3cT
+L4fW3V+8ZvkC96yFZf2YVDa3a5s5YGG8y//9wXDD2shAiu/bY+fjvWA5R1iAyzFR
+B38wBzsMH8yfaQk4PLf5YSR6pDKgp9H48Im+4ZuH4po+K6PVe/681Hql7kFZbeOB
++vj8l5ZLO4pe7W19i79XfXl77exIyqbWcM1Tibd9hXe83SXeHdHwFJjH1tz+xOD+
+reW3Rocz93eqwlN7ZkrI0abU6LGQhiHLh30Hjj9Z+UJctCVb8D9QL73efnnr04ci
+ElJMQ3c+jfU6GnYuV9qLf9levNQotvfWnKqOr5qqb9sYXHEtNuDK4/rz18unkjdP
+DnZmbsk592z6i7H5qzVHYlNvnPuaG9+PZHSXlJ2Ny9C+/XzjyFrL2P3EW5nZJyaM
+fV9tSdi9UPNl09TOhW07nklqnhv6Zro6//34GO9jnt98sLMiXF9QZwz7XJ19dyWG
+1fqKokq54fRJ8MnAtCe0Y0OtpjO+WF16wTCdteIrdEYYGPuk5Yw6567+7OLMrrDk
+2onmivYgX5EnsGrTT5G3P575+ZGMySir/yOD7uhKYlnvvjf5juTo1rnm5x4dTIj7
+3dq21DJ/6XD91eIBzcD4VJJ/z953A2cL2o0RVYa2yLxXsm5ebTOS/YvXzeXv1aQ7
+rI7BhRuZ+WNY175if27dWGzD7tU3/gLsX8ad
+=JW38
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/joedf
+
+==================================================================
