@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="image/png" rel="icon" sizes="192x192" href="assets/logo192.png">
+	<!-- Chrome, Firefox OS, Opera and Vivaldi --><meta name="theme-color" content="#7C7C7C">
+	<!-- Windows Phone --><meta name="msapplication-navbutton-color" content="#7C7C7C">
+	<!-- iOS Safari --><meta name="apple-mobile-web-app-status-bar-style" content="#7C7C7C">
+	<script src="http://coinwidget.com/widget/coin.js"></script>
+	<title>Joe DF</title>
+	<meta property="og:site_name" content="Joe DF's Website" />
+	<meta property="og:title" content="Joe DF's Website" />
+	<meta name="author" content="Joe DF">
+	<meta property="og:description" content="Welcome to Joe DF's website. Manager at the AutoHotkey Foundation, Carleton University - Earth Sciences Student, Programmer, Philosopher" />
+	<meta name="description" content="Welcome to Joe DF's website. Manager at the AutoHotkey Foundation, Carleton University - Earth Sciences Student, Programmer, Philosopher">
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:image" content="http://joedf.ahkscript.org/assets/logo192.png" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="192" />
+	<meta property="og:image:height" content="192" />
+</head>
+<body>
+<topbar right style="display:none;">
+	<item><a href="index.html">Home</a></item>
+	<item><a href="about.html">About</a></item>
+	<item><a href="contact.html">Contact</a></item>
+	<item><a href="donate.html"><img src="assets/img/donate.png" style="margin:0;" alt="Donate" title="Donate with PayPal or BitCoin"></a></item>
+	<!-- <item><xsmall>(Powered by <a href="http://strapdownjs.com/">StrapDown.js</a>)</xsmall></item> -->
+	<item><a href="javascript:DayAndNight();">*</a></item>
+</topbar>
+<xmp theme="yeti" style="display:none;">
+#Donate
+
+Hi there!
+  
+Donations are always appreciated. Especially when paying for university by yourself and doing a lot of volunteer work, beyond the call of duty. Don't be shy, don't hide. I don't bite. If you enjoy my work or you simply feel generous, feel free to buy me a coffee ![1] or a Fanta! ![2]  
+  
+Kind regards,  
+- Joe
+
+-----------------------------------------
+
+<a href="http://paypal.me/joedf"><img src="assets/img/donate-paypal.png" alt="Donate with PayPal" title="Donate with PayPal"></a>
+or <a href="#bitcoin"><img src="assets/img/donate-bitcoin.png" alt="Donate with BitCoin" title="Donate with BitCoin"></a>
+<p id="bitcoin">If the widget below does not show up: <code>1MSWeU3qbq53YsHsweByT1mgxG5BSvaq9x</code></p>
+
+  [1]: assets/img/emoji/coffee24.png
+  [2]: assets/img/emoji/drink24.png
+</xmp>
+<div class="container"><script>
+CoinWidgetCom.go({
+	wallet_address: "1MSWeU3qbq53YsHsweByT1mgxG5BSvaq9x"
+	, currency: "bitcoin"
+	, counter: "count"
+	, alignment: "bl"
+	, qrcode: true
+	, auto_show: true
+	, lbl_button: "Donate"
+	, lbl_address: "Donate to joedf by sending BTC to:"
+	, lbl_count: "donations"
+	, lbl_amount: "BTC"
+});
+</script></div>
+<script src="assets/strapdown/strapdown.min.js"></script>
+<script src="assets/strapdown/strapdown-topbar.js"></script>
+<script src="assets/js/logo.js"></script>
+<script src="assets/js/dayandnight.js"></script>
+</body>
+</html>

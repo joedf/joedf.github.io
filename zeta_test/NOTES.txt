@@ -1,0 +1,17 @@
+Using ~build.strapdown-zeta_v0.74-cdnjs_mathjax2.7.2.min
+
+- CSS needs some fixing?
+- test overflow long menu, need to be scrollable, use css, check mobile
+
+.navbar-nav > li > .dropdown-menu {
+	max-height: 436px;
+	overflow-y: auto;
+}
+
+
+- header achors, hide zeta's or mine for paragraph symbol
+- logo js, needs update
+- simplyfiy dayandnight.js to use the set_theme(), get theme with; var theme = strapdown_store.get('theme');
+	day: Yeti, night: darkly.
+
+- zeta seems to have some junk and is no the most light weight. consider maybe alternative?
