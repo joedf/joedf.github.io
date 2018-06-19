@@ -20,8 +20,10 @@ loadScript('assets/js/konami/konami.js', function(){
 	var cheatcode = new Konami(function() { alert('Konami Code!')});
 });
 
-/* google analytics */
-var _gaq=[['_setAccount','UA-121071672-1'],['_trackPageview']];
+/* Google Analytics */
+window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date()); gtag('config', 'UA-121071672-1');
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+g.src='https://www.googletagmanager.com/gtag/js?id=UA-121071672-1';
 s.parentNode.insertBefore(g,s)}(document,'script'));
+
