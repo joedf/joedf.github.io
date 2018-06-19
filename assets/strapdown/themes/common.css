@@ -1,0 +1,119 @@
+/* Modified by joedf */
+body {
+	background-color:#FEFEFE !important;
+	font-size: 14px !important;
+}
+xsmall, metatime {
+	font-size: 70%;
+}
+metatime {
+	float:right;
+}
+blockquote {
+	/* background-color:#F7F7F7 !important; */
+	border-left-width: 10px !important;
+	border-top-right-radius: 5px !important;
+	border-bottom-right-radius: 5px !important;
+	padding: 15px 20px !important;
+	margin: 0px 0px 15px !important;
+}
+blockquote p {
+	margin-bottom: 15px !important;
+	font-size: 14px !important;
+	line-height: 1.42857 !important;
+	font-weight: 300 !important;
+}
+q::before, q::after, blockquote::before, blockquote::after {
+    content: "" !important;
+}
+blockquote p:last-child {
+    margin-bottom: 0px !important;
+}
+.navbar .brand {
+	padding: 10px 20px !important;
+}
+
+ul.dropdown-menu
+{
+	overflow-y: auto;
+	max-height: 550px;
+}
+.container {
+	max-width: 95%;
+}
+.navbar a {
+	outline: none;
+}
+
+/*--------------------------------------------------------*/
+/* custom style for item/project boxes */
+.boxes {
+	vertical-align: middle;
+}
+@media(min-width:980px){
+	.boxes table {
+		display: inline-block;
+		max-width: 33%;
+	}
+	.boxes table tr td:nth-child(2) {
+		width: 100%;
+	}
+	.boxes table tr td.icon48 > img {
+		width: 48px;
+		height: 48px;
+	}
+}
+.boxes table tr td.icon48, .boxes table tr td.icon48 img  {
+	min-width: 48px;
+	max-width: 48px;
+}
+.norm table {
+	display: inline-block;
+	width: unset;
+}
+.boxes table tr td {
+	vertical-align: middle;
+}
+
+.boxes table tr td > img {
+	margin:0;
+}
+
+/*----------------------------------------------------*/
+/* vcard style - ripped and modified from github.com */
+.vcard {
+	/* margin: 15px 0px; */
+}
+.vcard-img img {
+	margin:0;
+}
+.vcard-details {
+	list-style: outside none none !important;
+	padding-top: 15px !important;
+	padding-bottom: 15px !important;
+	/* border-top: 1px solid #EEE !important;*/
+}
+.vcard-detail {
+    width: 100% !important;
+    padding: 2px 0px 2px 24px !important;
+    overflow-x: hidden !important;
+    white-space: nowrap !important;
+    font-size: 14px !important;
+    text-overflow: ellipsis !important;
+}
+.vcard-detail .octicon {
+    float: left;
+    width: 16px;
+    text-align: center;
+    margin-left: -24px;
+    color: #CCC;
+}
+.vcard ul, .vcard ol {
+	padding: 0px !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	margin-left: 0px !important;
+}
+
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:local('Open Sans Light'),local('OpenSans-Light'),url("../font/OpenSans-Light-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'),local('OpenSans'),url("../font/OpenSans-Regular-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:local('Open Sans Bold'),local('OpenSans-Bold'),url("../font/OpenSans-Bold-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:local('Open Sans Light Italic'),local('OpenSansLight-Italic'),url("../font/OpenSans-LightItalic-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:local('Open Sans Italic'),local('OpenSans-Italic'),url("../font/OpenSans-Italic-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:local('Open Sans Bold Italic'),local('OpenSans-BoldItalic'),url("../font/OpenSans-BoldItalic-webfont.woff") format('woff')}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:local('Open Sans Light'),local('OpenSans-Light'),url('../font/OpenSans-Light-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'),local('OpenSans'),url('../font/OpenSans-Regular-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:local('Open Sans Bold'),local('OpenSans-Bold'),url('../font/OpenSans-Bold-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:local('Open Sans Light Italic'),local('OpenSansLight-Italic'),url('../font/OpenSans-LightItalic-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:local('Open Sans Italic'),local('OpenSans-Italic'),url('../font/OpenSans-Italic-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:local('Open Sans Bold Italic'),local('OpenSans-BoldItalic'),url('../font/OpenSans-BoldItalic-webfont.svg') format('svg')}}body{-webkit-font-smoothing:antialiased}
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');*/
