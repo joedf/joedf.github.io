@@ -24,6 +24,7 @@ loadScript('assets/js/konami/konami.js', function(){
 window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date()); gtag('config', 'UA-121071672-1');
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-g.src='https://www.googletagmanager.com/gtag/js?id=UA-121071672-1';
+g.src='//www.googletagmanager.com/gtag/js?id=UA-121071672-1';
+g.setAttribute('async',true);
 s.parentNode.insertBefore(g,s)}(document,'script'));
 
