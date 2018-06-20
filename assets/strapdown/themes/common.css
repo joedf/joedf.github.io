@@ -38,8 +38,10 @@ ul.dropdown-menu
 	overflow-y: auto;
 	max-height: 550px;
 }
-.container {
-	max-width: 95%;
+@media(min-width:980px){
+	.container {
+		max-width: 95%;
+	}
 }
 .navbar a {
 	outline: none;
