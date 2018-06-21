@@ -41,26 +41,24 @@ Kind regards,
 -----------------------------------------
 
 <a href="http://paypal.me/joedf"><img src="assets/img/donate-paypal.png" alt="Donate with PayPal" title="Donate with PayPal"></a>
-or <a href="#bitcoin"><img src="assets/img/donate-bitcoin.png" alt="Donate with BitCoin" title="Donate with BitCoin"></a>
-<p id="bitcoin">If the widget below does not show up: <code>1MSWeU3qbq53YsHsweByT1mgxG5BSvaq9x</code></p>
+or <a href="#bitcoin"><img src="assets/img/donate-bitcoin.png" alt="Donate with BitCoin" title="Donate with BitCoin" onclick="toggleBitcoinQR();"></a>
+<p id="bitcoin">If the QR code below does not show up: <code>1MSWeU3qbq53YsHsweByT1mgxG5BSvaq9x</code></p>
 
   [1]: assets/img/emoji/coffee24.png
   [2]: assets/img/emoji/drink24.png
 </xmp>
-<div class="container"><script>
-CoinWidgetCom.go({
-	wallet_address: "1MSWeU3qbq53YsHsweByT1mgxG5BSvaq9x"
-	, currency: "bitcoin"
-	, counter: "count"
-	, alignment: "bl"
-	, qrcode: true
-	, auto_show: true
-	, lbl_button: "Donate"
-	, lbl_address: "Donate to joedf by sending BTC to:"
-	, lbl_count: "donations"
-	, lbl_amount: "BTC"
-});
-</script></div>
+<div class="container">
+<img src="https://blockchain.info/qr?size=200&data=1MSWeU3qbq53YsHsweByT1mgxG5BSvaq9x" id="bitcoinqr" style="display:none">
+</div>
+<script>
+	function toggleBitcoinQR() {
+		var bE = document.getElementById('bitcoinqr');
+		if (bE.style.display.indexOf('block') > -1)
+			bE.style.display='none';
+		else
+			bE.style.display='block';
+	}
+</script>
 <script src="assets/strapdown/all.min.js"></script>
 <script src="assets/strapdown/strapdown-topbar.min.js"></script>
 <script src="assets/js/logo.js"></script>
