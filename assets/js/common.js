@@ -28,6 +28,13 @@ function happiness(){
 	console.log('%c '+emojis[3]+emojis[3]+emojis[3]+' Unicorns! Yaaasssss! '+emojis[4], style);
 }
 
+function joedf(){
+    var w='color:transparent;background:none';
+    var b='color:#000;background:#000';
+    var r='color:#F00;background:#F00';
+    console.log('%cwwwwww%cbbbbbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbbbbbbbbbbbbbbbbbb%cwwww\n%cwwwwww%cbb%crr%cbb%crrrrrr%cbb%crrrrrr%cbb%cwwww\n%cwwwwww%cbb%crr%cbb%crr%cbb%crr%cbb%crr%cbbbbbb%cwwww\n%cwwwwww%cbb%crr%cbb%crr%cbb%crr%cbb%crrrr%cbb%cwwwwww\n%cbbbbbbbb%crr%cbb%crr%cbb%crr%cbb%crr%cbbbbbb%cwwww\n%cbb%crrrrrrrr%cbb%crrrrrr%cbb%crrrrrr%cbb%cwwww\n%cbbbbbbbbbbbbbbbbbbbbbbbbbbbb%cwwww\n%cbb%crrrr%cbbbb%crrrrrr%cbb%crr%cbb%crrrr%cbb%cwwww\n%cbb%crr%cbb%crr%cbb%crr%cbbbbbb%crr%cbb%crr%cbbbb%cwwww\n%cbb%crr%cbb%crr%cbb%crrrr%cbbbbbbbbbb%crr%cbb%cwwww\n%cbb%crrrr%cbbbb%crr%cbbbb%cwwww%cbb%crrrr%cbb%cwwww\n%cbbbbbbbbbbbbbb%cwwwwww%cbbbbbbbb%cwwww',w,b,w,w,b,r,b,w,w,b,r,b,w,w,b,r,b,w,w,b,r,b,w,w,b,r,b,r,b,r,b,w,w,b,r,b,r,b,r,b,r,b,w,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,w,b,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,w,b,r,b,w,b,w,b,w);
+}
+
 /* Google Analytics */
 window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date()); gtag('config', 'UA-121071672-1');
@@ -36,3 +43,5 @@ g.src='//www.googletagmanager.com/gtag/js?id=UA-121071672-1';
 g.setAttribute('async',true);
 s.parentNode.insertBefore(g,s)}(document,'script'));
 
+joedf()
+console.log('Scripts loaded.')
