@@ -46,14 +46,6 @@ function pikachu(){
 	console.log('%ctttttttttt%cbbbb%ctttttttttttttttttt%cbb%ctttt\n%ctttttttt%cbb%cgg%cbb%ctttttttttttttttt%cbb%cyy%cbb%ctt\n%ctttttttt%cbb%cyy%cbb%ctttttttttttttt%cbb%cyy%cxxxx%cbb\n%ctttttt%cbb%cyyyy%cbb%ctttttttt%cbbbbbb%cyy%cxxxxxx%cbb\n%ctttttt%cbb%cyy%cxx%cbb%ctttt%cbbbb%cgggg%cbb%cxxxxxx%cbb%ctt\n%ctttt%cbb%cyyyyyyyy%cbbbb%cyyyy%cgg%cbb%cxxxxxx%cbb%ctttt\n%ctt%cbb%cyyyyyyyyyyyyyyyyyy%cbbbb%cxxxx%cbb%ctttttt\n%cbb%cww%cyyyyyyyyyyyyyyyy%cxx%cbb%ctt%cbb%cxxxx%cbb%ctttt\n%cbbbb%cyyyyyyyyyyyyyyyyyy%cbb%ctttt%cbb%cxx%cbb%ctttt\n%cbb%cyyyyyyyy%cww%cbb%cyyyyyyyy%cxx%cbbbb%cxx%cbb%ctttttt\n%ctt%cbb%cyyyyyy%cbbbb%crrrr%cyy%cxxxx%cbbbbbb%ctttttttt\n%ctttt%cbb%cxx%cyyyyyy%crr%cxxxxxx%cbbbbbb%ctttttttttt\n%ctt%cbb%cyy%cxxxxxxxxxxxxxxxxxxxx%cbb%ctttttttttt\n%ctttt%cbbbb%cyyyyyyyyyy%cbb%cxxxx%cbbbb%ctttttttttt\n%ctttttt%cbb%cxx%cyyyyyy%cbb%cyy%cxxxxxx%cbb%ctttttttttt\n%ctttt%cbb%cxx%cbb%cxxxxxxxx%cbb%cxxxxxx%cbb%ctttttttttt\n%ctttt%cbbbbbbbbbb%cxxxxxxxxxx%cbb%ctttttttttttt\n%ctttttttttttttt%cbbbbbb%cxx%cbbbb%ctttttttttttt\n%ctttttttttttttttt%cbb%cyyyy%cxx%cbb%ctttttttttttt\n%ctttttttttttttttttt%cbbbbbb%ctttttttttttttt',t,b,t,b,t,t,b,g,b,t,b,y,b,t,t,b,y,b,t,b,y,x,b,t,b,y,b,t,b,y,x,b,t,b,y,x,b,t,b,g,b,x,b,t,t,b,y,b,y,g,b,x,b,t,t,b,y,b,x,b,t,b,w,y,x,b,t,b,x,b,t,b,y,b,t,b,x,b,t,b,y,w,b,y,x,b,x,b,t,t,b,y,b,r,y,x,b,t,t,b,x,y,r,x,b,t,t,b,y,x,b,t,t,b,y,b,x,b,t,t,b,x,y,b,y,x,b,t,t,b,x,b,x,b,x,b,t,t,b,x,b,t,t,b,x,b,t,t,b,y,x,b,t,t,b,t);
 }
 
-/* Google Analytics */
-window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date()); gtag('config', 'UA-121071672-1');
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-g.src='//www.googletagmanager.com/gtag/js?id=UA-121071672-1';
-g.setAttribute('async',true);
-s.parentNode.insertBefore(g,s)}(document,'script'));
-
 joedf();
 console.log('Scripts loaded.');
 pikachu();
