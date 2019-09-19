@@ -24,10 +24,10 @@ blockquote p {
 	font-weight: 300 !important;
 }
 q::before, q::after, blockquote::before, blockquote::after {
-    content: "" !important;
+	content: "" !important;
 }
 blockquote p:last-child {
-    margin-bottom: 0px !important;
+	margin-bottom: 0px !important;
 }
 .navbar .brand {
 	padding: 10px 20px !important;
@@ -52,6 +52,15 @@ blockquote p:last-child {
 		width: 48px;
 		height: 48px;
 	}
+}
+@media(max-width:768px){
+	.boxes table {
+		max-width: 48%;
+		display: inline-block;
+	}
+}
+.boxes table {
+	vertical-align: top;
 }
 .boxes table tr td.icon48, .boxes table tr td.icon48 img  {
 	min-width: 48px;

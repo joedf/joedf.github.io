@@ -65,6 +65,15 @@ ul.dropdown-menu
 		height: 48px;
 	}
 }
+@media(max-width:980px){
+	.boxes table {
+		max-width: 48%;
+		display: inline-block;
+	}
+}
+.boxes table {
+	vertical-align: top;
+}
 .boxes table tr td.icon48, .boxes table tr td.icon48 img  {
 	min-width: 48px;
 	max-width: 48px;
