@@ -91,6 +91,19 @@ ul.dropdown-menu
 }
 
 /*----------------------------------------------------*/
+/* profile badges */
+#profile_badges {
+	display: inline-block;
+	width: 100%;
+}
+#vcard_badge {
+	float: left;
+}
+#github_badge {
+	float: right;
+}
+
+/*----------------------------------------------------*/
 /* vcard style - ripped and modified from github.com */
 .vcard {
 	/* margin: 15px 0px; */
