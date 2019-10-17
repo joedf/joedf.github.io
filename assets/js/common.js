@@ -1,19 +1,19 @@
 // https://stackoverflow.com/a/950146/883015
 function loadScript(url, callback)
 {
-    // Adding the script tag to the head as suggested before
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
+	// Adding the script tag to the head as suggested before
+	var head = document.getElementsByTagName('head')[0];
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = url;
 
-    // Then bind the event to the callback function.
-    // There are several events for cross browser compatibility.
-    script.onreadystatechange = callback;
-    script.onload = callback;
+	// Then bind the event to the callback function.
+	// There are several events for cross browser compatibility.
+	script.onreadystatechange = callback;
+	script.onload = callback;
 
-    // Fire the loading
-    head.appendChild(script);
+	// Fire the loading
+	head.appendChild(script);
 }
 
 loadScript('assets/js/konami/konami.js', function(){
@@ -29,10 +29,10 @@ function happiness(){
 }
 
 function joedf(){
-    var w='color:transparent;background:none';
-    var b='color:#000;background:#000';
-    var r='color:#F00;background:#F00';
-    console.log('%cwwwwww%cbbbbbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbbbbbbbbbbbbbbbbbb%cwwww\n%cwwwwww%cbb%crr%cbb%crrrrrr%cbb%crrrrrr%cbb%cwwww\n%cwwwwww%cbb%crr%cbb%crr%cbb%crr%cbb%crr%cbbbbbb%cwwww\n%cwwwwww%cbb%crr%cbb%crr%cbb%crr%cbb%crrrr%cbb%cwwwwww\n%cbbbbbbbb%crr%cbb%crr%cbb%crr%cbb%crr%cbbbbbb%cwwww\n%cbb%crrrrrrrr%cbb%crrrrrr%cbb%crrrrrr%cbb%cwwww\n%cbbbbbbbbbbbbbbbbbbbbbbbbbbbb%cwwww\n%cbb%crrrr%cbbbb%crrrrrr%cbb%crr%cbb%crrrr%cbb%cwwww\n%cbb%crr%cbb%crr%cbb%crr%cbbbbbb%crr%cbb%crr%cbbbb%cwwww\n%cbb%crr%cbb%crr%cbb%crrrr%cbbbbbbbbbb%crr%cbb%cwwww\n%cbb%crrrr%cbbbb%crr%cbbbb%cwwww%cbb%crrrr%cbb%cwwww\n%cbbbbbbbbbbbbbb%cwwwwww%cbbbbbbbb%cwwww',w,b,w,w,b,r,b,w,w,b,r,b,w,w,b,r,b,w,w,b,r,b,w,w,b,r,b,r,b,r,b,w,w,b,r,b,r,b,r,b,r,b,w,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,w,b,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,w,b,r,b,w,b,w,b,w);
+	var w='color:transparent;background:none';
+	var b='color:#000;background:#000';
+	var r='color:#F00;background:#F00';
+	console.log('%cwwwwww%cbbbbbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbb%cwwwwwwwwwwwwwwwwwwww\n%cwwwwww%cbb%crr%cbbbbbbbbbbbbbbbbbb%cwwww\n%cwwwwww%cbb%crr%cbb%crrrrrr%cbb%crrrrrr%cbb%cwwww\n%cwwwwww%cbb%crr%cbb%crr%cbb%crr%cbb%crr%cbbbbbb%cwwww\n%cwwwwww%cbb%crr%cbb%crr%cbb%crr%cbb%crrrr%cbb%cwwwwww\n%cbbbbbbbb%crr%cbb%crr%cbb%crr%cbb%crr%cbbbbbb%cwwww\n%cbb%crrrrrrrr%cbb%crrrrrr%cbb%crrrrrr%cbb%cwwww\n%cbbbbbbbbbbbbbbbbbbbbbbbbbbbb%cwwww\n%cbb%crrrr%cbbbb%crrrrrr%cbb%crr%cbb%crrrr%cbb%cwwww\n%cbb%crr%cbb%crr%cbb%crr%cbbbbbb%crr%cbb%crr%cbbbb%cwwww\n%cbb%crr%cbb%crr%cbb%crrrr%cbbbbbbbbbb%crr%cbb%cwwww\n%cbb%crrrr%cbbbb%crr%cbbbb%cwwww%cbb%crrrr%cbb%cwwww\n%cbbbbbbbbbbbbbb%cwwwwww%cbbbbbbbb%cwwww',w,b,w,w,b,r,b,w,w,b,r,b,w,w,b,r,b,w,w,b,r,b,w,w,b,r,b,r,b,r,b,w,w,b,r,b,r,b,r,b,r,b,w,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,w,b,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,r,b,r,b,w,b,r,b,r,b,w,b,r,b,w,b,w,b,w);
 }
 
 function pikachu(){
@@ -46,7 +46,20 @@ function pikachu(){
 	console.log('%ctttttttttt%cbbbb%ctttttttttttttttttt%cbb%ctttt\n%ctttttttt%cbb%cgg%cbb%ctttttttttttttttt%cbb%cyy%cbb%ctt\n%ctttttttt%cbb%cyy%cbb%ctttttttttttttt%cbb%cyy%cxxxx%cbb\n%ctttttt%cbb%cyyyy%cbb%ctttttttt%cbbbbbb%cyy%cxxxxxx%cbb\n%ctttttt%cbb%cyy%cxx%cbb%ctttt%cbbbb%cgggg%cbb%cxxxxxx%cbb%ctt\n%ctttt%cbb%cyyyyyyyy%cbbbb%cyyyy%cgg%cbb%cxxxxxx%cbb%ctttt\n%ctt%cbb%cyyyyyyyyyyyyyyyyyy%cbbbb%cxxxx%cbb%ctttttt\n%cbb%cww%cyyyyyyyyyyyyyyyy%cxx%cbb%ctt%cbb%cxxxx%cbb%ctttt\n%cbbbb%cyyyyyyyyyyyyyyyyyy%cbb%ctttt%cbb%cxx%cbb%ctttt\n%cbb%cyyyyyyyy%cww%cbb%cyyyyyyyy%cxx%cbbbb%cxx%cbb%ctttttt\n%ctt%cbb%cyyyyyy%cbbbb%crrrr%cyy%cxxxx%cbbbbbb%ctttttttt\n%ctttt%cbb%cxx%cyyyyyy%crr%cxxxxxx%cbbbbbb%ctttttttttt\n%ctt%cbb%cyy%cxxxxxxxxxxxxxxxxxxxx%cbb%ctttttttttt\n%ctttt%cbbbb%cyyyyyyyyyy%cbb%cxxxx%cbbbb%ctttttttttt\n%ctttttt%cbb%cxx%cyyyyyy%cbb%cyy%cxxxxxx%cbb%ctttttttttt\n%ctttt%cbb%cxx%cbb%cxxxxxxxx%cbb%cxxxxxx%cbb%ctttttttttt\n%ctttt%cbbbbbbbbbb%cxxxxxxxxxx%cbb%ctttttttttttt\n%ctttttttttttttt%cbbbbbb%cxx%cbbbb%ctttttttttttt\n%ctttttttttttttttt%cbb%cyyyy%cxx%cbb%ctttttttttttt\n%ctttttttttttttttttt%cbbbbbb%ctttttttttttttt',t,b,t,b,t,t,b,g,b,t,b,y,b,t,t,b,y,b,t,b,y,x,b,t,b,y,b,t,b,y,x,b,t,b,y,x,b,t,b,g,b,x,b,t,t,b,y,b,y,g,b,x,b,t,t,b,y,b,x,b,t,b,w,y,x,b,t,b,x,b,t,b,y,b,t,b,x,b,t,b,y,w,b,y,x,b,x,b,t,t,b,y,b,r,y,x,b,t,t,b,x,y,r,x,b,t,t,b,y,x,b,t,t,b,y,b,x,b,t,t,b,x,y,b,y,x,b,t,t,b,x,b,x,b,x,b,t,t,b,x,b,t,t,b,x,b,t,t,b,y,x,b,t,t,b,t);
 }
 
+function sc4r3u53r(){
+	var x=new Date(); if(!(x.getMonth()==9 || x.getDate()>17)) return;
+	var em = [0x1F47B,0x1F383,0x1F987]; em.forEach(function(p,r,t){t[r]=String.fromCodePoint(p)})
+	zx=[];g=0;xz=function(){while(zx.length){clearInterval(zx.pop())};console.log('\nDone!');setTimeout(function(){
+	console.log("Don't worry, this is just a prank function. Happy Halloween! "+em[0]+em[1]+em[2]+" If it's not, well then sorry... :'(")},
+	2e3)};zx.push(setInterval(function(){g=(g<100)?g+1:xz()},123));zx.push(setInterval(function(){var a=[];
+	for(var i=0;i<6;i++){a.push(("0000000"+(Math.random()*1e6>>1).toString()).substr(-6))}
+	console.log('Bruteforcing credentials...   ',a.join(' '),'   '+g+'% complete');if(g>99) xz();},100))
+}
+
 joedf();
 console.log('Scripts loaded.');
 pikachu();
 console.log('Pikachu design rights to their respective owners, probably Nintendo.');
+console.log('\nIf you like pixel art or want images in the web console like this, check out paml.js in: https://github.com/joedf/PixelArtMarkupLanguage')
+
+setTimeout(sc4r3u53r, 2000);
