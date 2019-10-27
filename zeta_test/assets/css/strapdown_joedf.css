@@ -53,7 +53,7 @@ blockquote p:last-child {
 		height: 48px;
 	}
 }
-@media(max-width:768px){
+@media(min-width:480px) and (max-width:980px){
 	.boxes table {
 		max-width: 48%;
 		display: inline-block;
