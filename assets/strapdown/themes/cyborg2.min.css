@@ -4,6 +4,12 @@
 blockquote {
 	background-color:#070707 !important;
 }
+.boxes table {
+	border: 1px solid #333;
+}
+body {
+	background-attachment: fixed;
+}
 
 /*@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');*/
 
@@ -837,7 +843,8 @@ label,input,button,select,textarea,.navbar .search-query:-moz-placeholder,.navba
 code,pre{background-color:#eeeeee;}
 blockquote{border-left:5px solid #33b5e5;}blockquote.pull-right{border-right:5px solid #33b5e5;}
 html{min-height:100%;}
-body{min-height:100%;background-color:#121417;background-image:-moz-linear-gradient(top, #060606, #252a30);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#060606), to(#252a30));background-image:-webkit-linear-gradient(top, #060606, #252a30);background-image:-o-linear-gradient(top, #060606, #252a30);background-image:linear-gradient(to bottom, #060606, #252a30);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff060606', endColorstr='#ff252a30', GradientType=0);}
+/* joedf: changed bg-gradient from [#060606,#252a30] to [#060606,#121417] */
+body{min-height:100%;background-color:#121417;background-image:-moz-linear-gradient(top, #060606, #121417);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#060606), to(#121417));background-image:-webkit-linear-gradient(top, #060606, #121417);background-image:-o-linear-gradient(top, #060606, #121417);background-image:linear-gradient(to bottom, #060606, #121417);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff060606', endColorstr='#ff121417', GradientType=0);}
 .page-header{border-bottom:2px solid #33b5e5;}
 .navbar{font-size:16px;}.navbar .navbar-inner{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border-bottom:2px solid #33b5e5;}
 .navbar .brand{padding:12px 20px 11px;color:#eeeeee;font-weight:normal;text-shadow:none;}
