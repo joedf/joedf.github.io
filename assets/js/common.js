@@ -47,7 +47,7 @@ function pikachu(){
 }
 
 function sc4r3u53r(){
-	var x=new Date(); if(!(x.getMonth()==9 || x.getDate()>17)) return;
+	var x=new Date(); if( x.getMonth()!=9 || x.getDate()<17) return;
 	var em = [0x1F47B,0x1F383,0x1F987]; em.forEach(function(p,r,t){t[r]=String.fromCodePoint(p)})
 	zx=[];g=0;xz=function(){while(zx.length){clearInterval(zx.pop())};console.log('\nDone!');setTimeout(function(){
 	console.log("Don't worry, this is just a prank function. Happy Halloween! "+em[0]+em[1]+em[2]+" If it's not, well then sorry... :'(")},
