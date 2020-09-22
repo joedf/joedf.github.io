@@ -24,10 +24,10 @@ blockquote p {
 	font-weight: 300 !important;
 }
 q::before, q::after, blockquote::before, blockquote::after {
-    content: "" !important;
+	content: "" !important;
 }
 blockquote p:last-child {
-    margin-bottom: 0px !important;
+	margin-bottom: 0px !important;
 }
 .navbar .brand {
 	padding: 10px 20px !important;
@@ -47,8 +47,8 @@ ul.dropdown-menu
 	outline: none;
 }
 
-/*--------------------------------------------------------*/
 /* custom style for item/project boxes */
+/*--------------------------------------------------------*/
 .boxes {
 	vertical-align: middle;
 }
@@ -90,8 +90,8 @@ ul.dropdown-menu
 	margin:0;
 }
 
-/*----------------------------------------------------*/
 /* profile badges */
+/*----------------------------------------------------*/
 #profile_badges {
 	display: inline-block;
 	width: 100%;
@@ -103,8 +103,8 @@ ul.dropdown-menu
 	float: right;
 }
 
-/*----------------------------------------------------*/
 /* vcard style - ripped and modified from github.com */
+/*----------------------------------------------------*/
 .vcard {
 	/* margin: 15px 0px; */
 }
@@ -118,19 +118,19 @@ ul.dropdown-menu
 	/* border-top: 1px solid #EEE !important;*/
 }
 .vcard-detail {
-    width: 100% !important;
-    padding: 2px 0px 2px 24px !important;
-    overflow-x: hidden !important;
-    white-space: nowrap !important;
-    font-size: 14px !important;
-    text-overflow: ellipsis !important;
+	width: 100% !important;
+	padding: 2px 0px 2px 24px !important;
+	overflow-x: hidden !important;
+	white-space: nowrap !important;
+	font-size: 14px !important;
+	text-overflow: ellipsis !important;
 }
 .vcard-detail .octicon {
-    float: left;
-    width: 16px;
-    text-align: center;
-    margin-left: -24px;
-    color: #CCC;
+	float: left;
+	width: 16px;
+	text-align: center;
+	margin-left: -24px;
+	color: #CCC;
 }
 .vcard ul, .vcard ol {
 	padding: 0px !important;
@@ -138,6 +138,20 @@ ul.dropdown-menu
 	margin-bottom: 0px !important;
 	margin-left: 0px !important;
 }
+
+/* css animations */
+/*----------------------------------------------------*/
+.animate-spin-on-hover:hover { animation: spin 2s infinite linear; }
+@keyframes spin {
+	from {
+		transform: rotateY(0deg);
+	} to {
+		transform: rotateY(359deg);
+	}
+}
+
+/* include fonts */
+/*----------------------------------------------------*/
 
 @font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:local('Open Sans Light'),local('OpenSans-Light'),url("../font/OpenSans-Light-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'),local('OpenSans'),url("../font/OpenSans-Regular-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:local('Open Sans Bold'),local('OpenSans-Bold'),url("../font/OpenSans-Bold-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:local('Open Sans Light Italic'),local('OpenSansLight-Italic'),url("../font/OpenSans-LightItalic-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:local('Open Sans Italic'),local('OpenSans-Italic'),url("../font/OpenSans-Italic-webfont.woff") format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:local('Open Sans Bold Italic'),local('OpenSans-BoldItalic'),url("../font/OpenSans-BoldItalic-webfont.woff") format('woff')}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:local('Open Sans Light'),local('OpenSans-Light'),url('../font/OpenSans-Light-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'),local('OpenSans'),url('../font/OpenSans-Regular-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:local('Open Sans Bold'),local('OpenSans-Bold'),url('../font/OpenSans-Bold-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:local('Open Sans Light Italic'),local('OpenSansLight-Italic'),url('../font/OpenSans-LightItalic-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:local('Open Sans Italic'),local('OpenSans-Italic'),url('../font/OpenSans-Italic-webfont.svg') format('svg')}}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:local('Open Sans Bold Italic'),local('OpenSans-BoldItalic'),url('../font/OpenSans-BoldItalic-webfont.svg') format('svg')}}body{-webkit-font-smoothing:antialiased}
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');*/
