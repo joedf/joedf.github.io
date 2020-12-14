@@ -1,10 +1,11 @@
-//from  http://www.w3schools.com/js/js_cookies.asp
+// modified from http://www.w3schools.com/js/js_cookies.asp
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
+    document.cookie = cname + "=" + cvalue + "; " + expires + ';SameSite=Lax';
 }
 
 function getCookie(cname) {
