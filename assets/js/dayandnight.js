@@ -5,7 +5,7 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
     // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
-    document.cookie = cname + "=" + cvalue + "; " + expires + ';SameSite=Lax';
+    document.cookie = cname + "=" + cvalue + "; " + expires + ';SameSite=None; Secure';
 }
 
 function getCookie(cname) {
