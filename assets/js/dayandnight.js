@@ -42,6 +42,7 @@ function DayAndNight(autorun) {
 		if (theme.contains("night")) {
 			stylesheet.href = 'assets/strapdown/themes/'+night_theme+'.min.css';
 			setCookie("theme","night",cookielife);
+			dark_GithubBadge();
 		} else {
 			stylesheet.href = 'assets/strapdown/themes/'+day_theme+'.min.css';
 			setCookie("theme","day",cookielife);
@@ -50,6 +51,7 @@ function DayAndNight(autorun) {
 		if (stylesheet.href.contains(day_theme)) {
 			stylesheet.href = 'assets/strapdown/themes/'+night_theme+'.min.css';
 			setCookie("theme","night",cookielife);
+			dark_GithubBadge();
 		} else {
 			stylesheet.href = 'assets/strapdown/themes/'+day_theme+'.min.css';
 			setCookie("theme","day",cookielife);
@@ -57,6 +59,19 @@ function DayAndNight(autorun) {
 	}
 	
 	return;
+}
+
+function dark_GithubBadge() {
+	try {
+		var e = document.getElementById('github_badge');
+		if (e != null) {
+			if (e.src.indexOf('/dark') < 0) {
+				e.src += '/dark';
+			}
+		}
+	} catch (error) {
+		console.error('Could not set dark theme for Github badge.')
+	}
 }
 
 ;(function(){
