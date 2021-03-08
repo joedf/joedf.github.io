@@ -42,31 +42,41 @@ function DayAndNight(autorun) {
 		if (theme.contains("night")) {
 			stylesheet.href = 'assets/strapdown/themes/'+night_theme+'.min.css';
 			setCookie("theme","night",cookielife);
-			dark_GithubBadge();
+			dark_GithubBadge(true);
 		} else {
 			stylesheet.href = 'assets/strapdown/themes/'+day_theme+'.min.css';
 			setCookie("theme","day",cookielife);
+			dark_GithubBadge(false);
 		}
 	} else {
 		if (stylesheet.href.contains(day_theme)) {
 			stylesheet.href = 'assets/strapdown/themes/'+night_theme+'.min.css';
 			setCookie("theme","night",cookielife);
-			dark_GithubBadge();
+			dark_GithubBadge(true);
 		} else {
 			stylesheet.href = 'assets/strapdown/themes/'+day_theme+'.min.css';
 			setCookie("theme","day",cookielife);
+			dark_GithubBadge(false);
 		}
 	}
 	
 	return;
 }
 
-function dark_GithubBadge() {
+function dark_GithubBadge(make_dark) {
+	make_dark = (typeof make_dark !== 'undefined') ? make_dark : true
 	try {
 		var e = document.getElementById('github_badge');
 		if (e != null) {
-			if (e.src.indexOf('/dark') < 0) {
-				e.src += '/dark';
+
+			if (make_dark) {
+				if (e.src.indexOf('/dark') < 0) {
+					e.src += '/dark';
+				}
+			} else {
+				if (e.src.indexOf('/dark') >= 0) {
+					e.src = e.src.replace('/dark','');
+				}
 			}
 		}
 	} catch (error) {
