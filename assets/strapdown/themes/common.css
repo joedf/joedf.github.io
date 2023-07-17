@@ -90,6 +90,17 @@ ul.dropdown-menu
 	margin:0;
 }
 
+/* for dark icons that need a contrasting bg color in the dark theme */
+.icon48.dark > img {
+	background: #f9f9f9;
+	padding: 4px;
+	max-width: 40px !important;
+	min-width: 40px !important;
+	max-height: 40px !important;
+	min-height: 40px !important;
+	border-radius: 4px;
+}
+
 /* profile badges */
 /*----------------------------------------------------*/
 #profile_badges {
