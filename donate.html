@@ -48,8 +48,8 @@ Kind regards,
 -----------------------------------------
 
 <a href="http://paypal.me/joedf"><img src="assets/img/donate-paypal.png" alt="Donate with PayPal" title="Donate with PayPal"></a>
-or <a href="#bitcoin"><img src="assets/img/donate-bitcoin.png" alt="Donate with BitCoin" title="Donate with BitCoin" onclick="toggleBitcoinQR();"></a>
-<p id="bitcoin">If the QR code below does not show up: <code>1MSWeU3qbq53YsHsweByT1mgxG5BSvaq9x</code></p>
+<a href="#bitcoin"><img src="assets/img/donate-bitcoin.png" alt="Donate with BitCoin" title="Donate with BitCoin" onclick="toggleBitcoinQR();"></a>
+<p id="bitcoin">If the bitcoin QR code below does not show up: <code>1MSWeU3qbq53YsHsweByT1mgxG5BSvaq9x</code></p>
 
   [1]: assets/img/emoji/coffee24.png
   [2]: assets/img/emoji/drink24.png
@@ -71,5 +71,16 @@ or <a href="#bitcoin"><img src="assets/img/donate-bitcoin.png" alt="Donate with 
 <script src="assets/js/logo.js"></script>
 <script src="assets/js/dayandnight.js"></script>
 <script src="assets/js/common.js"></script>
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+	kofiWidgetOverlay.draw('joedf', {
+		'type': 'floating-chat',
+		'floating-chat.donateButton.text': 'Support Me',
+		'floating-chat.donateButton.background-color': '#00b9fe',
+		'floating-chat.donateButton.text-color': '#fff'
+	});
+</script>
+
 </body>
 </html>
