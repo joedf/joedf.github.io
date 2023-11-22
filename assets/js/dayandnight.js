@@ -66,16 +66,17 @@ function DayAndNight(autorun) {
 function dark_GithubBadge(make_dark) {
 	make_dark = (typeof make_dark !== 'undefined') ? make_dark : true
 	try {
+		const dark_theme_url_token = '?theme=dark';
 		var e = document.getElementById('github_badge');
 		if (e != null) {
 
 			if (make_dark) {
-				if (e.src.indexOf('/dark') < 0) {
-					e.src += '/dark';
+				if (e.src.indexOf(dark_theme_url_token) < 0) {
+					e.src += dark_theme_url_token;
 				}
 			} else {
-				if (e.src.indexOf('/dark') >= 0) {
-					e.src = e.src.replace('/dark','');
+				if (e.src.indexOf(dark_theme_url_token) >= 0) {
+					e.src = e.src.replace(dark_theme_url_token,'');
 				}
 			}
 		}
