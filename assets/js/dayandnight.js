@@ -42,41 +42,47 @@ function DayAndNight(autorun) {
 		if (theme.contains("night")) {
 			stylesheet.href = 'assets/strapdown/themes/'+night_theme+'.min.css';
 			setCookie("theme","night",cookielife);
-			dark_GithubBadge(true);
+			dark_Widgets(true);
 		} else {
 			stylesheet.href = 'assets/strapdown/themes/'+day_theme+'.min.css';
 			setCookie("theme","day",cookielife);
-			dark_GithubBadge(false);
+			dark_Widgets(false);
 		}
 	} else {
 		if (stylesheet.href.contains(day_theme)) {
 			stylesheet.href = 'assets/strapdown/themes/'+night_theme+'.min.css';
 			setCookie("theme","night",cookielife);
-			dark_GithubBadge(true);
+			dark_Widgets(true);
 		} else {
 			stylesheet.href = 'assets/strapdown/themes/'+day_theme+'.min.css';
 			setCookie("theme","day",cookielife);
-			dark_GithubBadge(false);
+			dark_Widgets(false);
 		}
 	}
 	
 	return;
 }
 
-function dark_GithubBadge(make_dark) {
+function dark_Widgets(make_dark) {
 	make_dark = (typeof make_dark !== 'undefined') ? make_dark : true
 	try {
 		const dark_theme_url_token = '?theme=dark';
-		var e = document.getElementById('github_badge');
-		if (e != null) {
 
-			if (make_dark) {
-				if (e.src.indexOf(dark_theme_url_token) < 0) {
-					e.src += dark_theme_url_token;
-				}
-			} else {
-				if (e.src.indexOf(dark_theme_url_token) >= 0) {
-					e.src = e.src.replace(dark_theme_url_token,'');
+		var widget_ids = ['github_badge', 'pocket_widget']
+
+		for (let i = 0; i < widget_ids.length; i++) {
+			const id = widget_ids[i];
+			var e = document.getElementById(id);
+			if (e != null) {
+	
+				if (make_dark) {
+					if (e.src.indexOf(dark_theme_url_token) < 0) {
+						e.src += dark_theme_url_token;
+					}
+				} else {
+					if (e.src.indexOf(dark_theme_url_token) >= 0) {
+						e.src = e.src.replace(dark_theme_url_token,'');
+					}
 				}
 			}
 		}
