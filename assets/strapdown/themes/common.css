@@ -112,7 +112,9 @@ ul.dropdown-menu
 }
 #about_widgets {
 	position: absolute;
-	right: 11.5vw;
+	/* #content.container is 1170px in simplex2 theme */
+	/* float to the right by calculating the margin left over */
+	right: calc(50vw - 585px);
 }
 #pocket_widget {
 	margin:0 0 10px 10px;
