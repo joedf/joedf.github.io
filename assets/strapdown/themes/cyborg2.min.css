@@ -6,6 +6,7 @@ blockquote {
 }
 .boxes table {
 	border: 1px solid #333;
+	background-color: rgba(100, 100, 100, 0.1);
 }
 body {
 	background-attachment: fixed;
