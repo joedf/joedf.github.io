@@ -109,29 +109,23 @@ ul.dropdown-menu
 }
 #vcard_badge {
 	float: left;
+	margin-right: 1em;
+}
+@media(max-width:400px){
+	#vcard_badge {
+		margin-right: unset;
+	}
 }
 #about_widgets {
-	position: absolute;
+	float: right;
 	/* #content.container is 1170px in simplex2 theme */
 	/* float to the right by calculating the margin left over */
-	right: calc(50vw - 585px);
+	/* position: absolute; */
+	/* right: calc(50vw - 585px); */
 }
-#pocket_widget {
-	margin:0 0 10px 10px;
-	float: right;
-}
-@media(max-width:1200px){
+@media(max-width:590px){
 	#about_widgets {
-		position: relative;
-		right: unset;
-		display: inline-block;
-		text-align: center;
-	}
-	#pocket_widget {
-		float: none;
-		margin-left: 0;
-		margin-bottom: 0;
-		height: 304px !important;
+		float: unset;
 	}
 }
 
